@@ -1,5 +1,7 @@
 import recat,{useState} from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
+import { faMagnifyingGlass, faCartShopping, faHeart, faEnvelope } from '@fortawesome/free-solid-svg-icons'
 
 const NavBar = () => {
   const [nav, setNav] = useState(false)
@@ -38,9 +40,10 @@ const NavBar = () => {
         </div>
         <div className="hidden md:flex">
             <ul className="flex text-[#f9ffff] items-center">
-              <li>Catogories</li>
-              <li>About US</li>
-              <li>Contact Us</li>
+              <li>Login/Register</li>
+              <li><FontAwesomeIcon icon={faMagnifyingGlass} /></li>
+              <li><FontAwesomeIcon icon={faCartShopping} /></li>
+              <li><FontAwesomeIcon icon={faHeart} /></li>
               {/* <button className="ml-4"> Get Quote</button> */}
             </ul>
           </div>
