@@ -7,18 +7,18 @@ const Hero = () => {
   return (
     <div className="w-full h-[90vh] top-[90px] bg-gradient-to-r from-[var(--primary-blue)] to-[var(--primary-lightblue)] px-5 py-3">
       <div
-        className="w-full h-[90%] flex flex-row justify-between  text-white text-left place-items-start items-center"
+        className="w-full h-[90%] lg:flex lg:flex-row md:block justify-between  text-white text-left lg:place-items-start md:place-items-center items-center"
         style={{ padding: "9.895833333333333%" }}
       >
 
-        <div>
-          <h4 className="font-bold text-xl" style={{ fontSize: "25px" }}>
+        <div className="text-res">
+          <h4 className="font-bold">
             SUMMER 2020
           </h4>
-          <h1 className="py-2 text-7xl" style={{ fontSize: "80px" }}>
+          <h1 className="py-2">
             -30% Discount
           </h1>
-          <p className="text-xl py-4" style={{ fontSize: "25px" }}>
+          <p className=" py-4">
             We know how large objects will act,
             <br /> but things on a small scale.
           </p>

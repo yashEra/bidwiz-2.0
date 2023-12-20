@@ -1,8 +1,23 @@
-@media screen and (max-height:900px) {
+/* .nav-sec{
+    height: 100px;
+
+} */
+
+
+@media screen and (max-width:1024px) {
 
     .nav-sec{
-        height: 81px;
+        height: 80px;
 
     }
     
 }
+
+/* @media screen and (max-width:1540px) {
+
+    .nav-sec{
+        height: 80px;
+
+    }
+    
+} */

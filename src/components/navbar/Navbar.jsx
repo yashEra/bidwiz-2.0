@@ -2,6 +2,7 @@ import recat,{useState} from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faCartShopping, faHeart, faUser } from '@fortawesome/free-solid-svg-icons'
+import './assest/css/nav-style.css'
 
 const NavBar = () => {
   const [nav, setNav] = useState(false)
@@ -9,13 +10,13 @@ const NavBar = () => {
     setNav(!nav)
   }
   return (
-    <div className="w-full 2xl:h-[100px] lg:h-[80px] bg-while" >
+    <div className="w-full 2xl:h-[100px] lg:h-[80px] sm:h-[79px] bg-while nav-sec" >
       <div className="max-w-[80.20833333333333%] mx-auto px-4 flex justify-between items-center h-full">
         <div>
           <h1 className="text-[#1357DE] font-black">BidWiz 2.0</h1>
         </div>
         <div>
-          <div className="hidden md:flex font-bold">
+          <div className="hidden lg:flex font-bold">
             <ul className="flex text-[#555555] items-center">
               <li>Catogories</li>
               <li>About US</li>
@@ -24,10 +25,10 @@ const NavBar = () => {
             </ul>
           </div>
           
-          <div className="block md:hidden">
+          <div className="block lg:hidden">
             {nav ? <AiOutlineClose onClick={handleNav} size={30} className="text-[#1357DE]" /> :  <AiOutlineMenu onClick={handleNav} size={30} className="text-[#1357DE]" /> }
           </div>
-          <div className={nav ? "w-full bg-black text-[#f9ffff] font-bold absolute top-[89px] left-0 flex justify-center text-center" : "absolute left-[-100%]"}>
+          <div className={nav ? "w-full bg-black text-[#f9ffff] font-bold absolute top-[79px] left-0 flex justify-center text-center" : "absolute left-[-100%]"}>
             <ul>
               <li className="text-2xl">Home</li>
               <li className="text-2xl">Services</li>
@@ -38,7 +39,7 @@ const NavBar = () => {
             </ul>
           </div>
         </div>
-        <div className="hidden md:flex">
+        <div className="hidden lg:flex">
             <ul className="flex text-[#1357DE] items-center">
               <li><FontAwesomeIcon icon={faUser} /><span  className="px-4 font-bold">Login/Register</span></li>
               <li><FontAwesomeIcon icon={faMagnifyingGlass} /></li>
