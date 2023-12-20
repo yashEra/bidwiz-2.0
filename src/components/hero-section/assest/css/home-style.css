@@ -12,7 +12,7 @@
     font-size: 25px;
 }
 
-@media screen and (max-height:1000px) {
+@media screen and (max-height:932px) {
 
     .hero-img img{
         height: 300px;
@@ -44,7 +44,7 @@
     
 }
 
-@media (max-width: 1000px) {
+@media (max-width: 1025px) {
     .text-res,.hero-img{
       display: flex;
       flex-direction: column;

@@ -12,7 +12,7 @@ const Hero = () => {
       >
 
         <div className="text-res">
-          <h4 className="font-bold">
+          <h4 className="font-bold py-1">
             SUMMER 2020
           </h4>
           <h1 className="py-2">
