@@ -10,7 +10,7 @@ const NavBar = () => {
   }
   return (
     <div className="w-full h-[90px] bg-while " >
-      <div className="max-w-[1240px] mx-auto px-4 flex justify-between items-center h-full">
+      <div className="max-w-[80.20833333333333%] mx-auto px-4 flex justify-between items-center h-full">
         <div>
           <h1 className="text-[#1357DE] font-black">BidWiz 2.0</h1>
         </div>
