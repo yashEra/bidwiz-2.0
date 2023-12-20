@@ -9,7 +9,7 @@ const NavBar = () => {
     setNav(!nav)
   }
   return (
-    <div className="w-full h-[90px] bg-while " >
+    <div className="w-full 2xl:h-[100px] lg:h-[80px] bg-while" >
       <div className="max-w-[80.20833333333333%] mx-auto px-4 flex justify-between items-center h-full">
         <div>
           <h1 className="text-[#1357DE] font-black">BidWiz 2.0</h1>

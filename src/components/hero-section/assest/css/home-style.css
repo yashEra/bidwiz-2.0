@@ -1,0 +1,12 @@
+.hero-img img{
+    height: 645px;
+}
+
+@media screen and (max-height:900px) {
+
+    .hero-img img{
+        height: 500px;
+
+    }
+    
+}
