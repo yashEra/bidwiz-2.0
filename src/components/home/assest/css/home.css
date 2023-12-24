@@ -1,0 +1,14 @@
+.top-sec-main{
+    
+    height: 180px;
+    margin: 0 9.895833333333333%;
+    margin-top: -100px;
+}
+
+@media screen and (max-width:1024px) {
+
+    .top-sec-main{
+        margin-top: -35px;
+    }
+    
+}

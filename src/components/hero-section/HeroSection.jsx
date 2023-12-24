@@ -7,7 +7,7 @@ const Hero = () => {
   return (
     <div className="w-full h-[90vh] top-[90px] bg-gradient-to-r from-[var(--primary-blue)] to-[var(--primary-lightblue)] px-5 py-3">
       <div
-        className="w-full h-[90%] lg:flex lg:flex-row md:block justify-between  text-white text-left lg:place-items-start md:place-items-center items-center"
+        className="w-full h-[90%] lg:flex lg:flex-row md:block justify-between  text-white text-left lg:place-items-start items-center"
         style={{ padding: "9.895833333333333%" }}
       >
 
