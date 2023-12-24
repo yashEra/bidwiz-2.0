@@ -13,7 +13,7 @@ const NavBar = () => {
     <div className="w-full 2xl:h-[100px] lg:h-[80px] sm:h-[79px] bg-while nav-sec" >
       <div className="max-w-[80.20833333333333%] mx-auto px-4 flex justify-between items-center h-full">
         <div>
-          <h1 className="text-[#1357DE] font-black">BidWiz 2.0</h1>
+          <h1 className="text-[#1357DE] font-black">BidWiz</h1>
         </div>
         <div>
           <div className="hidden lg:flex font-bold">

@@ -5,7 +5,7 @@ import "./assest/css/home.css";
 const TopSection = () => {
   return (
     <div className="w-full flex justify-center items-center">
-      <div className="w-[1150px] bg-[white] top-sec-main drop-shadow-xl">
+      <div className="lg:w-[1160px] bg-[white] top-sec-main drop-shadow-xl">
         <div className="flex lg:flex-row sm:flex-col md:flex-col justify-around items-center">
           <div>
             <a className="flex flex-col justify-center items-center p-8">
@@ -37,7 +37,7 @@ const TopSection = () => {
               <span className="text-[--primary-blue] text-xl font-bold">
                 Mobile Devices
               </span>
-              <span className="text-[--primary-blue] text-lg">
+              <span className="text-[--primary-blue] text-md">
                 Mobile Devices
               </span>
             </a>
