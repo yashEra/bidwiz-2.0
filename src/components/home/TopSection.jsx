@@ -1,17 +1,15 @@
 import recat from "react";
 import MobileIcon from "./assest/Mobile.svg";
-import './assest/css/home.css'
+import "./assest/css/home.css";
 
 const TopSection = () => {
   return (
-    <div
-      className="w-[80.20833333333333%] bg-[white] top-sec-main drop-shadow-xl"
-    >
-      <div className="flex lg:flex-row sm:flex-col md:flex-col justify-around items-center">
-
+    <div className="w-full flex justify-center items-center">
+      <div className="w-[1150px] bg-[white] top-sec-main drop-shadow-xl">
+        <div className="flex lg:flex-row sm:flex-col md:flex-col justify-around items-center">
           <div>
             <a className="flex flex-col justify-center items-center p-8">
-              <img src={MobileIcon} alt="" width='60px'/>
+              <img src={MobileIcon} alt="" width="60px" />
               <span className="text-[--primary-blue] text-xl font-bold">
                 Mobile Devices
               </span>
@@ -23,7 +21,7 @@ const TopSection = () => {
 
           <div>
             <a className="flex flex-col justify-center items-center p-8">
-              <img src={MobileIcon} alt="" width='60px'/>
+              <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
                 Mobile Devices
               </span>
@@ -35,7 +33,7 @@ const TopSection = () => {
 
           <div>
             <a className="flex flex-col justify-center items-center p-8">
-              <img src={MobileIcon} alt="" width='60px'/>
+              <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
                 Mobile Devices
               </span>
@@ -47,7 +45,7 @@ const TopSection = () => {
 
           <div>
             <a className="flex flex-col justify-center items-center p-8">
-              <img src={MobileIcon} alt="" width='60px'/>
+              <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
                 Mobile Devices
               </span>
@@ -57,6 +55,7 @@ const TopSection = () => {
             </a>
           </div>
         </div>
+      </div>
     </div>
   );
 };
