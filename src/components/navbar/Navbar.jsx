@@ -17,7 +17,7 @@ const NavBar = () => {
         </div>
         <div>
           <div className="hidden lg:flex font-bold">
-            <ul className="flex text-[#555555] items-center">
+            <ul className="flex text-[#555555] items-center text-md">
               <li>Catogories</li>
               <li>About US</li>
               <li>Contact Us</li>
@@ -40,8 +40,8 @@ const NavBar = () => {
           </div>
         </div>
         <div className="hidden lg:flex">
-            <ul className="flex text-[#1357DE] items-center">
-              <li><FontAwesomeIcon icon={faUser} /><span  className="px-4 font-bold">Login/Register</span></li>
+            <ul className="flex text-[#23A6F0] items-center">
+              <li><FontAwesomeIcon icon={faUser} /><span  className="px-4 font-bold">Login / Register</span></li>
               <li><FontAwesomeIcon icon={faMagnifyingGlass} /></li>
               <li><FontAwesomeIcon icon={faCartShopping} /></li>
               <li><FontAwesomeIcon icon={faHeart} /></li>
