@@ -4,6 +4,7 @@ import Hero from '../hero-section/HeroSection'
 import TopSection from './TopSection'
 import ThreeLineTitle from '../titles/ThreeLineTitle'
 import ProductCard from '../product/ProductCard'
+import Footer from '../footer/Footer'
 
 const Home = () => {
     return (
@@ -14,6 +15,7 @@ const Home = () => {
           <TopSection/>
           <ThreeLineTitle top="Featured Products" main="BESTSELLER PRODUCTS" bottom="Problems trying to resolve the conflict between "/>
           <ProductCard/>
+          <Footer/>
 
 
             

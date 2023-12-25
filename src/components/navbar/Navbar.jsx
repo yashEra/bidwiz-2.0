@@ -18,9 +18,9 @@ const NavBar = () => {
         <div>
           <div className="hidden lg:flex font-bold">
             <ul className="flex text-[#555555] items-center text-md">
-              <li>Catogories</li>
-              <li>About US</li>
-              <li>Contact Us</li>
+              <li className="p-4">Catogories</li>
+              <li className="p-4">About US</li>
+              <li className="p-4">Contact Us</li>
               {/* <button className="ml-4"> Get Quote</button> */}
             </ul>
           </div>
@@ -41,10 +41,10 @@ const NavBar = () => {
         </div>
         <div className="hidden lg:flex">
             <ul className="flex text-[#23A6F0] items-center">
-              <li><FontAwesomeIcon icon={faUser} /><span  className="px-4 font-bold">Login / Register</span></li>
-              <li><FontAwesomeIcon icon={faMagnifyingGlass} /></li>
-              <li><FontAwesomeIcon icon={faCartShopping} /></li>
-              <li><FontAwesomeIcon icon={faHeart} /></li>
+              <li className="p-4"><FontAwesomeIcon icon={faUser} /><span  className="px-4 font-bold">Login / Register</span></li>
+              <li className="p-4"><FontAwesomeIcon icon={faMagnifyingGlass} /></li>
+              <li className="p-4"><FontAwesomeIcon icon={faCartShopping} /></li>
+              <li className="p-4"><FontAwesomeIcon icon={faHeart} /></li>
               {/* <button className="ml-4"> Get Quote</button> */}
             </ul>
           </div>

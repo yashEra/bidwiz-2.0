@@ -14,7 +14,7 @@ const TopSection = () => {
                 Mobile Devices
               </span>
               <span className="text-[--primary-blue] text-md">
-                Mobile Devices
+                Hardware and Accesories
               </span>
             </a>
           </div>
@@ -23,7 +23,7 @@ const TopSection = () => {
             <a className="flex flex-col justify-center items-center p-8">
               <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
-                Mobile Devices
+                Electronic Devices
               </span>
               <span className="text-[--primary-blue] text-md">
                 Mobile Devices
@@ -35,10 +35,10 @@ const TopSection = () => {
             <a className="flex flex-col justify-center items-center p-8">
               <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
-                Mobile Devices
+                Computers
               </span>
               <span className="text-[--primary-blue] text-md">
-                Mobile Devices
+                Hardware and Accesories
               </span>
             </a>
           </div>
@@ -47,7 +47,7 @@ const TopSection = () => {
             <a className="flex flex-col justify-center items-center p-8">
               <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
-                Mobile Devices
+              Hardware and Accesories
               </span>
               <span className="text-[--primary-blue] text-md">
                 Mobile Devices

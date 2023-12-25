@@ -20,7 +20,7 @@
         @apply text-3xl font-bold
     }
     li{
-        @apply p-4
+        /* @apply p-4 */
     }
     button{
         /* @apply bg-gradient-to-r from-[var(--primary-blue)] to-pink-500 px-5 py-3 rounded-3xl */
