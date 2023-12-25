@@ -18,7 +18,7 @@ const Home = () => {
         bottom="Problems trying to resolve the conflict between "
       />
       <div
-        className="grid grid-cols-4 gap-4 2xl:grid-cols-5"
+        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
         style={{
           padding: "0 9.895833333333333% 4% 9.895833333333333%",
         }}
@@ -37,7 +37,7 @@ const Home = () => {
         bottom="Problems trying to resolve the conflict between "
       />
       <div
-        className="grid grid-cols-4 gap-4 2xl:grid-cols-5"
+        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
         style={{
           padding: "0 9.895833333333333% 4% 9.895833333333333%",
         }}
@@ -56,7 +56,7 @@ const Home = () => {
         bottom="Problems trying to resolve the conflict between "
       />
       <div
-        className="grid grid-cols-4 gap-4 2xl:grid-cols-5"
+        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
         style={{
           padding: "0 9.895833333333333% 4% 9.895833333333333%",
         }}
@@ -69,7 +69,7 @@ const Home = () => {
         <ProductCard />
       </div>
 
-      
+
       <Footer />
     </div>
   );
