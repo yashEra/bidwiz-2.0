@@ -1,7 +1,7 @@
 const ProductCard = (props) => {
   return (
     <div className="bg-[white] drop-shadow-md rounded-xl transform hover:scale-105 duration-300 hover:shadow-lg">
-      <img
+      <a href="#"><img
         className="h-48 w-full object-cover object-center rounded-lg"
         src="https://images.unsplash.com/photo-1468436139062-f60a71c5c892?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D"
         alt="Product Image"
@@ -24,6 +24,7 @@ const ProductCard = (props) => {
           <p className="ml-auto text-base font-medium text-[#0052D4]">Bid Now!</p>
         </div>
       </div>
+      </a>
     </div>
   );
 };
