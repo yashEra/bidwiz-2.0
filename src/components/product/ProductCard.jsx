@@ -1,6 +1,6 @@
 const ProductCard = (props) => {
   return (
-    <div className="bg-[white] drop-shadow-md rounded-xl transform hover:scale-105 hover:shadow-lg">
+    <div className="bg-[white] drop-shadow-md rounded-xl transform hover:scale-105 duration-300 hover:shadow-lg">
       <img
         className="h-48 w-full object-cover object-center rounded-lg"
         src="https://images.unsplash.com/photo-1674296115670-8f0e92b1fddb?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=870&q=80"
