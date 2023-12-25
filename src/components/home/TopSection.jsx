@@ -13,7 +13,7 @@ const TopSection = () => {
               <span className="text-[--primary-blue] text-xl font-bold">
                 Mobile Devices
               </span>
-              <span className="text-[--primary-blue] text-md">
+              <span className="text-gray-500 text-md">
                 Hardware and Accesories
               </span>
             </a>
