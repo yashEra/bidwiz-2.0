@@ -69,7 +69,7 @@ const Footer = () => {
         </ul>
       </div>
     </div>
-    <div className="flex flex-row justify-center p-8"><span className="text-md text-white font-bold">Made With Love By BidWiz Team. All Right Reserved.</span></div>
+    <div className="flex flex-row justify-center p-8"><span className="text-md text-white font-bold">Made With 💗 By BidWiz Team. All Right Reserved.</span></div>
     </div>
   );
 };
