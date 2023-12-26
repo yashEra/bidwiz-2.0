@@ -58,7 +58,7 @@ const NavBar = () => {
           <div
             className={
               nav
-                ? "w-full bg-[#1357DE] text-[#f9ffff] font-medium absolute top-[59px] left-0 flex justify-left text-left"
+                ? "w-full bg-gradient-to-r from-[var(--primary-blue)] to-[var(--primary-lightblue)] text-[#f9ffff] font-medium absolute top-[59px] left-0 flex justify-center text-center"
                 : "absolute left-[-200%]"
             }
           >
@@ -77,7 +77,7 @@ const NavBar = () => {
               </li>
               <li className="text-xl py-4 px-14 flex flex-row justify-between">
                 <input
-                  className="peer block w-1/2 appearance-none border-0 border-b border-white bg-transparent py-2.5 px-0 text-xl text-white focus:border-blue-600 focus:outline-none focus:ring-0"
+                  className="peer block w-3/4 appearance-none border-0 border-b border-white bg-transparent py-2.5 px-0 text-xl text-white focus:border-blue-600 focus:outline-none focus:ring-0"
                   type="text"
                   name="search"
                   placeholder="Search"
