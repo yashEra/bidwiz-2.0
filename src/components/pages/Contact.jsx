@@ -6,7 +6,7 @@ const Contact = () => {
     <div>
       <NavBar />
 
-      <div className="pt-[5%] pb-[5%] px-[9.895833333333333%]">
+      <div className="lg:pt-[10%] pt-[20%] pb-[5%] px-[9.895833333333333%]">
         <div className="w-full items-center grid lg:grid-cols-2 gap-16">
           <div className="">
             <div className="flex flex-row pb-8">
@@ -61,11 +61,11 @@ const Contact = () => {
             </h2>
             <p className="text-base text-gray-500">Rest of Address</p>
             <hr className="w-1/2 border-[#8EC2F2]" />
-            <div className="w-full flex flex-row justify-start">
+            <div className="w-full flex flex-row justify-between">
               <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
               <p className="font-md text-gray-500 py-4 pl-4">+94 55 123 4567</p>
             </div>
-            <div className="w-full flex flex-row justify-start">
+            <div className="w-full flex flex-row justify-between">
               <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
               <p className="font-md text-gray-500 pb-4 pl-4">badulla@bidwiz.com</p>
             </div>
@@ -76,11 +76,11 @@ const Contact = () => {
             </h2>
             <p className="text-base text-gray-500">Rest of Address</p>
             <hr className="w-1/2 border-[#8EC2F2]" />
-            <div className="w-full flex flex-row justify-start">
+            <div className="w-full flex flex-row justify-between">
               <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
               <p className="font-md text-gray-500 py-4 pl-4">+94 55 123 4567</p>
             </div>
-            <div className="w-full flex flex-row justify-start">
+            <div className="w-full flex flex-row justify-between">
               <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
               <p className="font-md text-gray-500 pb-4 pl-4">badulla@bidwiz.com</p>
             </div>
@@ -91,11 +91,11 @@ const Contact = () => {
             </h2>
             <p className="text-base text-gray-500">Rest of Address</p>
             <hr className="w-1/2 border-[#8EC2F2]" />
-            <div className="w-full flex flex-row justify-start">
+            <div className="w-full flex flex-row justify-between">
               <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
               <p className="font-md text-gray-500 py-4 pl-4">+94 55 123 4567</p>
             </div>
-            <div className="w-full flex flex-row justify-start">
+            <div className="w-full flex flex-row justify-between">
               <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
               <p className="font-md text-gray-500 pb-4 pl-4">badulla@bidwiz.com</p>
             </div>

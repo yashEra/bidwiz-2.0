@@ -5,13 +5,13 @@ import './assest/css/home-style.css'
 
 const Hero = () => {
   return (
-    <div className="w-full h-[90vh] top-[90px] bg-gradient-to-r from-[var(--primary-blue)] to-[var(--primary-lightblue)] px-5 py-3">
+    <div className="w-full lg:h-[100vh] top-[90px] bg-gradient-to-r from-[var(--primary-blue)] to-[var(--primary-lightblue)] px-5 py-3">
       <div
-        className="w-full h-[90%] lg:flex  lg:flex-row md:block justify-around  text-white text-left items-center"
+        className="w-full h-[100%] lg:flex  lg:flex-row md:block justify-around  text-white text-left items-center"
         style={{ padding: "9.895833333333333%" }}
       >
 
-        <div className="text-res">
+        <div className="text-res pt-[50px]">
           <h4 className="font-bold py-1">
             SUMMER 2023
           </h4>
