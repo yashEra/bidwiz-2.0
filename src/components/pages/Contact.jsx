@@ -61,13 +61,13 @@ const Contact = () => {
             </h2>
             <p className="text-base text-gray-500">Rest of Address</p>
             <hr className="w-1/2 border-[#8EC2F2]" />
-            <div className="w-full flex flex-row justify-between">
+            <div className="w-full flex flex-row justify-start">
               <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
-              <p className="font-md text-gray-500 py-4">+94 55 123 4567</p>
+              <p className="font-md text-gray-500 py-4 pl-4">+94 55 123 4567</p>
             </div>
-            <div className="w-full flex flex-row justify-between">
+            <div className="w-full flex flex-row justify-start">
               <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
-              <p className="font-md text-gray-500 pb-4">badulla@bidwiz.com</p>
+              <p className="font-md text-gray-500 pb-4 pl-4">badulla@bidwiz.com</p>
             </div>
           </div>
           <div>
@@ -76,13 +76,13 @@ const Contact = () => {
             </h2>
             <p className="text-base text-gray-500">Rest of Address</p>
             <hr className="w-1/2 border-[#8EC2F2]" />
-            <div className="w-full flex flex-row justify-between">
+            <div className="w-full flex flex-row justify-start">
               <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
-              <p className="font-md text-gray-500 py-4">+94 55 123 4567</p>
+              <p className="font-md text-gray-500 py-4 pl-4">+94 55 123 4567</p>
             </div>
-            <div className="w-full flex flex-row justify-between">
+            <div className="w-full flex flex-row justify-start">
               <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
-              <p className="font-md text-gray-500 pb-4">badulla@bidwiz.com</p>
+              <p className="font-md text-gray-500 pb-4 pl-4">badulla@bidwiz.com</p>
             </div>
           </div>
           <div>
@@ -91,13 +91,13 @@ const Contact = () => {
             </h2>
             <p className="text-base text-gray-500">Rest of Address</p>
             <hr className="w-1/2 border-[#8EC2F2]" />
-            <div className="w-full flex flex-row justify-between">
+            <div className="w-full flex flex-row justify-start">
               <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
-              <p className="font-md text-gray-500 py-4">+94 55 123 4567</p>
+              <p className="font-md text-gray-500 py-4 pl-4">+94 55 123 4567</p>
             </div>
-            <div className="w-full flex flex-row justify-between">
+            <div className="w-full flex flex-row justify-start">
               <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
-              <p className="font-md text-gray-500 pb-4">badulla@bidwiz.com</p>
+              <p className="font-md text-gray-500 pb-4 pl-4">badulla@bidwiz.com</p>
             </div>
           </div>
         </div>

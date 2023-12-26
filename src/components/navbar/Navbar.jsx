@@ -16,7 +16,7 @@ const NavBar = () => {
   };
   return (
     <div className="w-full 2xl:h-[100px] lg:h-[80px] sm:h-[79px] bg-while nav-sec">
-      <div className="max-w-[80.20833333333333%] mx-auto px-4 flex justify-between items-center h-full">
+      <div className="max-w-[80.20833333333333%] mx-auto flex justify-between items-center h-full">
         <div>
           <h1 className="text-[#1357DE] font-black">
             <a href="/">BidWiz</a>
@@ -39,8 +39,8 @@ const NavBar = () => {
           </div>
 
           <div className="flex lg:hidden items-center">
-          <a href="items-center"><FontAwesomeIcon icon={faCartShopping} className="text-[#1357DE] text-[25px] px-2"/></a>
-          <a href="items-center"><FontAwesomeIcon icon={faHeart} className="text-[#1357DE] text-[25px] px-4"/></a>
+          <a href="items-center"><FontAwesomeIcon icon={faCartShopping} className="text-[#1357DE] text-[20px] px-2"/></a>
+          <a href="items-center"><FontAwesomeIcon icon={faHeart} className="text-[#1357DE] text-[20px] px-4"/></a>
             {nav ? (
               <AiOutlineClose
                 onClick={handleNav}
