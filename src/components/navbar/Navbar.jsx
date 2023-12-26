@@ -13,14 +13,14 @@ const NavBar = () => {
     <div className="w-full 2xl:h-[100px] lg:h-[80px] sm:h-[79px] bg-while nav-sec" >
       <div className="max-w-[80.20833333333333%] mx-auto px-4 flex justify-between items-center h-full">
         <div>
-          <h1 className="text-[#1357DE] font-black">BidWiz</h1>
+          <h1 className="text-[#1357DE] font-black"><a href="/">BidWiz</a></h1>
         </div>
         <div>
           <div className="hidden lg:flex font-bold">
             <ul className="flex text-[#555555] items-center text-md">
-              <li className="p-4">Catogories</li>
-              <li className="p-4">About US</li>
-              <li className="p-4">Contact Us</li>
+              <li className="p-4"><a href="contact">Catogories</a></li>
+              <li className="p-4"><a href="contact">About US</a></li>
+              <li className="p-4"><a href="contact">Contact Us</a></li>
               {/* <button className="ml-4"> Get Quote</button> */}
             </ul>
           </div>
