@@ -7,7 +7,7 @@ const TopSection = () => {
     <div className="w-full flex justify-center items-center">
       <div className="lg:w-[80.20833333333333%] bg-[white] top-sec-main drop-shadow-xl rounded-xl">
         <div className="flex lg:flex-row sm:flex-col md:flex-col justify-around items-center text-center">
-          <div>
+          <div className="hover:scale-105 duration-300">
             <a className="flex flex-col justify-center items-center p-8">
               <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
@@ -19,37 +19,37 @@ const TopSection = () => {
             </a>
           </div>
 
-          <div>
+          <div className="hover:scale-105 duration-300">
             <a className="flex flex-col justify-center items-center p-8">
               <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
                 Electronic Devices
               </span>
-              <span className="text-[--primary-blue] text-md">
+              <span className="text-gray-500 text-md">
                 Mobile Devices
               </span>
             </a>
           </div>
 
-          <div>
+          <div className="hover:scale-105 duration-300">
             <a className="flex flex-col justify-center items-center p-8">
               <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
                 Computers
               </span>
-              <span className="text-[--primary-blue] text-md">
+              <span className="text-gray-500 text-md">
                 Hardware and Accesories
               </span>
             </a>
           </div>
 
-          <div>
+          <div className="hover:scale-105 duration-300">
             <a className="flex flex-col justify-center items-center p-8">
               <img src={MobileIcon} alt="" width="50px" />
               <span className="text-[--primary-blue] text-xl font-bold">
               Hardware and Accesories
               </span>
-              <span className="text-[--primary-blue] text-md">
+              <span className="text-gray-500 text-md">
                 Mobile Devices
               </span>
             </a>

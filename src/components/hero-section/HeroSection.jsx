@@ -23,7 +23,7 @@ const Hero = () => {
             <br /> but things on a small scale.
           </p>
           <div className="">
-            <button className="w-[153px]  h-[45px] rounded-3xl border-solid border-2 border-light-blue-500">
+            <button className="w-[153px]  h-[45px] rounded-3xl border-solid border-2 border-light-blue-500 hover:scale-105 duration-300">
               Read More
             </button>
           </div>

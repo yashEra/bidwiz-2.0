@@ -29,23 +29,6 @@ const Home = () => {
         <ProductCard />
         <ProductCard />
         <ProductCard />
-      </div>
-
-      <ThreeLineTitle
-        top="Featured Products"
-        main="BESTSELLER PRODUCTS"
-        bottom="Problems trying to resolve the conflict between "
-      />
-      <div
-        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
-        style={{
-          padding: "0 9.895833333333333% 4% 9.895833333333333%",
-        }}
-      >
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
         <ProductCard />
         <ProductCard />
       </div>
@@ -61,6 +44,29 @@ const Home = () => {
           padding: "0 9.895833333333333% 4% 9.895833333333333%",
         }}
       >
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+
+      <ThreeLineTitle
+        top="Featured Products"
+        main="BESTSELLER PRODUCTS"
+        bottom="Problems trying to resolve the conflict between "
+      />
+      <div
+        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
+        style={{
+          padding: "0 9.895833333333333% 4% 9.895833333333333%",
+        }}
+      >
+        <ProductCard />
+        <ProductCard />
         <ProductCard />
         <ProductCard />
         <ProductCard />
