@@ -1,4 +1,4 @@
-import recat,{useState} from "react";
+import {useState} from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome'
 import { faMagnifyingGlass, faCartShopping, faHeart, faUser } from '@fortawesome/free-solid-svg-icons'
