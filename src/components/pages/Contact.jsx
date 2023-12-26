@@ -6,11 +6,11 @@ const Contact = () => {
     <div>
       <NavBar />
 
-      <div className="w-full h-[90vh] items-center grid lg:grid-cols-2 gap-16 pt-8 px-[9.895833333333333%] lg:top-[-100px]">
+      <div className="w-full items-center grid lg:grid-cols-2 gap-16 pt-8 p-[9.895833333333333%] lg:top-[-100px]">
         <div className="">
           <div className="">
-            <div className="flex flex-row justify-center pb-8">
-              <h1 className="text-[#1357DE] font-black text-center">
+            <div className="flex flex-row pb-8 px-[5%]">
+              <h1 className="text-[#1357DE] text-4xl font-semibold">
                 Getting Touch With Us
               </h1>
             </div>
@@ -54,10 +54,52 @@ const Contact = () => {
             </form>
           </div>
         </div>
-        <div className="w-full grid grid-cols-2 gap-4 justify-end">
-          <div>Badulla</div>
-          <div className="text-left">Galle</div>
-          <div>Nuwara Eli</div>
+        <div className="w-full grid lg:grid-cols-2 md:grid-cols-2 gap-12">
+          <div>
+            <h2 className="text-[#1357DE] text-xl font-semibold py-4">
+              Badulla
+            </h2>
+            <p className="text-base text-gray-500">Rest of Address</p>
+            <hr className="w-1/2 border-[#8EC2F2]" />
+            <div className="w-full flex flex-row justify-between">
+              <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
+              <p className="font-md text-gray-500 py-4">+94 55 123 4567</p>
+            </div>
+            <div className="w-full flex flex-row justify-between">
+              <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
+              <p className="font-md text-gray-500 pb-4">badulla@bidwiz.com</p>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-[#1357DE] text-xl font-semibold py-4">
+              Galle
+            </h2>
+            <p className="text-base text-gray-500 pb-4">Rest of Address</p>
+            <hr className="w-1/2 border-[#8EC2F2]" />
+            <div className="w-full flex flex-row justify-between">
+              <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
+              <p className="font-md text-gray-500 py-4">+94 55 123 4567</p>
+            </div>
+            <div className="w-full flex flex-row justify-between">
+              <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
+              <p className="font-md text-gray-500 pb-4">badulla@bidwiz.com</p>
+            </div>
+          </div>
+          <div>
+            <h2 className="text-[#1357DE] text-xl font-semibold py-4">
+              Nuwara Eli
+            </h2>
+            <p className="text-base text-gray-500 pb-4">Rest of Address</p>
+            <hr className="w-1/2 border-[#8EC2F2]" />
+            <div className="w-full flex flex-row justify-between">
+              <p className="font-bold font-md text-gray-500 py-4">Phone: </p>
+              <p className="font-md text-gray-500 py-4">+94 55 123 4567</p>
+            </div>
+            <div className="w-full flex flex-row justify-between">
+              <p className="font-bold font-md  text-gray-500 pb-4">Email:</p>
+              <p className="font-md text-gray-500 pb-4">badulla@bidwiz.com</p>
+            </div>
+          </div>
         </div>
       </div>
       <Footer />
