@@ -26,10 +26,10 @@ const NavBar = () => {
           <div className="hidden lg:flex font-bold">
             <ul className="flex text-[#555555] items-center text-md">
               <li className="p-4">
-                <a href="contact">Catogories</a>
+                <a href="categories">Categories</a>
               </li>
               <li className="p-4">
-                <a href="contact">About US</a>
+                <a href="about">About US</a>
               </li>
               <li className="p-4">
                 <a href="contact">Contact Us</a>
@@ -64,16 +64,16 @@ const NavBar = () => {
           >
             <ul>
               <li className="text-xl py-4 px-14">
-                <a href="contact">Catogories</a>
+                <a href="categories">Categories</a>
               </li>
               <li className="text-xl py-4 px-14">
-                <a href="contact">About Us</a>
+                <a href="about">About Us</a>
               </li>
               <li className="text-xl py-4 px-14">
                 <a href="contact">Contact Us</a>
               </li>
               <li className="text-xl py-4 px-14">
-                <a href="contact">Login / Register</a>
+                <a href="login">Login / Register</a>
               </li>
               <li className="text-xl py-4 px-14 flex flex-row justify-between">
                 <input
@@ -96,7 +96,7 @@ const NavBar = () => {
           <ul className="flex text-[#23A6F0] items-center">
             <li className="p-4">
               <FontAwesomeIcon icon={faUser} />
-              <span className="px-4 font-bold">Login / Register</span>
+              <a href="login"><span className="px-4 font-bold">Login / Register</span></a>
             </li>
             <li className="p-4">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
