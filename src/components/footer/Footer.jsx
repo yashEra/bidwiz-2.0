@@ -41,7 +41,7 @@ const Footer = () => {
             <a href="#">About</a>
           </li>
           <li className="text-[#8EC2F2]">
-            <a href="#">Contact</a>
+            <a href="contact">Contact</a>
           </li>
           <li className="text-[#8EC2F2]">
             <a href="#">FaQ</a>
