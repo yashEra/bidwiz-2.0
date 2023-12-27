@@ -21,12 +21,14 @@ const Contact = () => {
                   type="text"
                   name="firstname"
                   placeholder="First Name"
+                  required
                 />
                 <input
                   className="peer block w-full appearance-none border-0 border-b border-gray-500 bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-blue-600 focus:outline-none focus:ring-0"
                   type="text"
                   name="lastname"
                   placeholder="First Name"
+                  required
                 />
               </div>
               <div className="py-[2%] ">
@@ -35,6 +37,7 @@ const Contact = () => {
                   type="email"
                   name="email"
                   placeholder="Email"
+                  required
                 />
               </div>
               <div className="py-[2%]">
@@ -43,6 +46,7 @@ const Contact = () => {
                   type="textarea"
                   name="des"
                   placeholder="Message"
+                  required
                 />
                 <button
                   type="submit"

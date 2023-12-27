@@ -24,7 +24,7 @@ const NavBar = () => {
         </div>
         <div>
           <div className="hidden lg:flex font-bold">
-            <ul className="flex text-[#555555] items-center text-md">
+            <ul className="flex text-[#555555] items-center text-sm">
               <li className="p-4">
                 <a href="categories">Categories</a>
               </li>
@@ -39,8 +39,18 @@ const NavBar = () => {
           </div>
 
           <div className="flex lg:hidden items-center">
-          <a href="items-center"><FontAwesomeIcon icon={faCartShopping} className="text-[#1357DE] text-[20px] px-2"/></a>
-          <a href="items-center"><FontAwesomeIcon icon={faHeart} className="text-[#1357DE] text-[20px] px-4"/></a>
+            <a href="items-center">
+              <FontAwesomeIcon
+                icon={faCartShopping}
+                className="text-[#1357DE] text-[20px] px-2"
+              />
+            </a>
+            <a href="items-center">
+              <FontAwesomeIcon
+                icon={faHeart}
+                className="text-[#1357DE] text-[20px] px-4"
+              />
+            </a>
             {nav ? (
               <AiOutlineClose
                 onClick={handleNav}
@@ -58,7 +68,7 @@ const NavBar = () => {
           <div
             className={
               nav
-                ? "w-full bg-gradient-to-r from-[var(--primary-blue)] to-[var(--primary-lightblue)] text-[#f9ffff] font-medium absolute top-[59px] left-0 flex justify-center text-center"
+                ? "w-full bg-gradient-to-r from-[var(--primary-blue)] to-[var(--primary-lightblue)] text-[#f9ffff] font-medium absolute top-[59px] left-0 flex justify-center text-center py-12"
                 : "absolute left-[-200%]"
             }
           >
@@ -75,19 +85,21 @@ const NavBar = () => {
               <li className="text-xl py-4 px-14">
                 <a href="login">Login / Register</a>
               </li>
-              <li className="text-xl py-4 px-14 flex flex-row justify-between">
-                <input
-                  className="peer block w-3/4 appearance-none border-0 border-b border-white bg-transparent py-2.5 px-0 text-xl text-white focus:border-blue-600 focus:outline-none focus:ring-0"
-                  type="text"
-                  name="search"
-                  placeholder="Search"
-                />
-                <button
-                  type="submit"
-                  class="mt-5 rounded-xl bg-[white] px-10 py-2 text-[#1357DE]"
-                >
-                  <FontAwesomeIcon icon={faMagnifyingGlass} />
-                </button>
+              <li className="text-xl py-4 px-14">
+                <form className="flex flex-row justify-between">
+                  <input
+                    className="peer block w-3/4 appearance-none border-0 border-b border-white bg-transparent py-2.5 px-0 text-xl text-white focus:border-blue-600 focus:outline-none focus:ring-0"
+                    type="text"
+                    name="search"
+                    placeholder="Search"
+                  />
+                  <button
+                    type="submit"
+                    class="mt-5 rounded-xl bg-[white] px-10 py-2 text-[#1357DE]"
+                  >
+                    <FontAwesomeIcon icon={faMagnifyingGlass} />
+                  </button>
+                </form>
               </li>
             </ul>
           </div>
@@ -96,7 +108,9 @@ const NavBar = () => {
           <ul className="flex text-[#23A6F0] items-center">
             <li className="p-4">
               <FontAwesomeIcon icon={faUser} />
-              <a href="login"><span className="px-4 font-bold">Login / Register</span></a>
+              <a href="login">
+                <span className="px-4 font-bold text-sm">Login / Register</span>
+              </a>
             </li>
             <li className="p-4">
               <FontAwesomeIcon icon={faMagnifyingGlass} />
