@@ -118,7 +118,7 @@ const NavBar = () => {
             <li className="p-4">
               <FontAwesomeIcon icon={faCartShopping} />
             </li>
-            <li className="p-4">
+            <li className="py-4 pl-4">
               <FontAwesomeIcon icon={faHeart} />
             </li>
           </ul>

@@ -9,7 +9,14 @@
 
     .top-sec-main{
         margin-top: -35px;
-        height: 706.64px;
+        height: auto;
+    }
+    
+}
+@media screen and (max-width:800px) {
+
+    .top-sec-main{
+        margin-top: -35px;
     }
     
 }

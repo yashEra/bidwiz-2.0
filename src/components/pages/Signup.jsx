@@ -68,7 +68,7 @@ const SignUp = () => {
                 <input
                   id="phonenumber"
                   name="phonenumber"
-                  type="number"
+                  type="tel"
                   autoComplete="number"
                   required
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
@@ -116,7 +116,7 @@ const SignUp = () => {
                 type="submit"
                 className="flex w-full justify-center rounded-md bg-[#1357DE] px-3 py-1.5 text-sm font-semibold leading-6 text-white shadow-sm hover:bg-[#23A6F0] focus-visible:outline focus-visible:outline-2 focus-visible:outline-offset-2 focus-visible:outline-indigo-600"
               >
-                Sign op
+                Sign up
               </button>
             </div>
           </form>
