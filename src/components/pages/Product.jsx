@@ -21,8 +21,8 @@ const ProductDes = () => {
   return (
     <>
       <NavBar />
-      <div className="w-full lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[9.895833333333333%]">
-        <div className="flex flex-col justify-between lg:flex-row gap-16 lg:items-center">
+      <div className="w-full lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[9.895833333333333%] flex justify-center">
+        <div className="flex flex-col justify-between lg:flex-row gap-16 items-center max-w-7xl">
           <div className="flex flex-col gap-6 lg:w-2/4">
             <img
               src={activeImg}
@@ -56,7 +56,7 @@ const ProductDes = () => {
               />
             </div>
           </div>
-          {/* ABOUT */}
+          {/* Description */}
           <div className="flex flex-col gap-4 lg:w-2/4">
             <div>
               <span className=" text-[#0052D4] font-semibold">
