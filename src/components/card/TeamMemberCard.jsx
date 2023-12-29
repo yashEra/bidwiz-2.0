@@ -6,7 +6,7 @@ const TeamMemberCard = (props) => {
       <a href="#">
         <div className="p-2">
         <img
-          className="h-[400px] w-full object-cover object-center rounded-t-lg"
+          className="md:h-[400px] sm:h-[300px] w-full object-cover object-center rounded-t-lg"
           src={props.image}
           alt="Profile Picture"
         />

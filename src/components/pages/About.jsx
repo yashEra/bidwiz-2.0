@@ -1,6 +1,6 @@
 import NavBar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
-import TeamMemberCard from "../../card/TeamMemberCard";
+import TeamMemberCard from "../card/TeamMemberCard";
 import ThreeLineTitle from "../titles/ThreeLineTitle";
 
 const About = () => {
