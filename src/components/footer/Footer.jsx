@@ -38,16 +38,16 @@ const Footer = () => {
         <h2 className="font-bold text-xl py-4">Company info</h2>
         <ul className="flex flex-col items-start font-medium">
           <li className="text-[#8EC2F2]">
-            <a href="#">About</a>
+            <a href="about">About</a>
           </li>
           <li className="text-[#8EC2F2]">
             <a href="contact">Contact</a>
           </li>
           <li className="text-[#8EC2F2]">
-            <a href="#">FaQ</a>
+            <a href="faq">FaQ</a>
           </li>
           <li className="text-[#8EC2F2]">
-            <a href="#">Help</a>
+            <a href="help">Help</a>
           </li>
         </ul>
       </div>
