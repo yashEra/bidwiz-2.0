@@ -29,29 +29,29 @@ const ProductDes = () => {
               alt=""
               className="w-full h-full aspect-square object-cover rounded-xl object-center"
             />
-            <div className="grid grid-cols-4 gap-4 w-full overflow-hidden">
+            <div className="grid grid-cols-4 md:gap-4 gap-2 w-full">
               <img
                 src={images.img1}
                 alt=""
-                className="w-24 h-24 rounded-md cursor-pointer aspect-square object-cover"
+                className="w-full md:h-24 h-16  rounded-md cursor-pointer aspect-square object-cover object-center"
                 onClick={() => setActiveImage(images.img1)}
               />
               <img
                 src={images.img2}
                 alt=""
-                className="w-24 h-24 rounded-md cursor-pointer oaspect-square object-cover"
+                className="w-full md:h-24 h-16 rounded-md cursor-pointer oaspect-square object-cover object-center"
                 onClick={() => setActiveImage(images.img2)}
               />
               <img
                 src={images.img3}
                 alt=""
-                className="w-24 h-24 rounded-md cursor-pointer aspect-square object-cover"
+                className="w-full md:h-24 h-16 rounded-md cursor-pointer aspect-square object-cover object-center"
                 onClick={() => setActiveImage(images.img3)}
               />
               <img
                 src={images.img4}
                 alt=""
-                className="w-24 h-24 rounded-md cursor-pointer aspect-square object-cover"
+                className="w-full md:h-24 h-16 rounded-md cursor-pointer aspect-square object-cover object-center"
                 onClick={() => setActiveImage(images.img4)}
               />
             </div>
