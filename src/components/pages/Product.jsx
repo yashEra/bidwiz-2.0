@@ -72,7 +72,7 @@ const ProductDes = () => {
               pensato per dare il massimo lungo il tuo percorso preferito e fare
               ritorno a casa carico di energia, in attesa della prossima corsa.
             </p>
-            <h6 className="text-2xl font-semibold">$ 199.00</h6>
+            <h6 className="text-2xl font-bold"> Current BID <span className="text-[#0052D4]">$ 199.00</span></h6>
             <div className="flex flex-row items-center gap-12">
               <div className="flex flex-row items-center">
                 <button
@@ -90,7 +90,7 @@ const ProductDes = () => {
                 </button>
               </div>
               <button className="bg-[#0052D4] text-white font-semibold py-3 px-8 rounded-xl h-full">
-              <FontAwesomeIcon icon={faCartShopping} />
+              bid
               </button>
             </div>
           </div>
