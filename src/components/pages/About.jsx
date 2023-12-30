@@ -24,7 +24,7 @@ const About = () => {
           />
         </div>
 
-        <div className="flex justify-center px-[5%] md:px-[9.895833333333333%]">
+        <div className="flex justify-center px-[5%] md:px-[10%]">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-4 max-w-[1140px]  justify-center pb-8">
             <TeamMemberCard
               name="Yasith Eranda"
@@ -32,44 +32,44 @@ const About = () => {
               image="images/team/yasith-2.png"
               linkedin="https://www.linkedin.com/in/yasith-eranda-yapa-amarasekara/"
               github="https://github.com/yashEra"
-              fb=""
+              fb="https://web.facebook.com/yash.era1998/"
               portfolio="https://cv.yasitheranda.me/"
             />
             <TeamMemberCard
               name="Niwandi Githma"
               des="Web Developer, Tech Enthusiest, Content Writer"
               image="images/team/niwandi.jpg"
-              linkedin="#"
+              linkedin="https://www.linkedin.com/in/niwandi-hewagama/"
               github="#"
-              fb="#"
-              portfolio="#"
+              fb="https://www.facebook.com/githma.hewagama?mibextid=LQQJ4d"
+              // portfolio="#"
             />
             <TeamMemberCard
               name="Malith Rathnayake"
               des="Web Developer, Tech Enthusiest, Videographer"
               image="images/team/malith.jpg"
-              linkedin="#"
-              github="#"
-              fb="#"
-              portfolio="#"
+              linkedin="https://www.linkedin.com/in/malith-rathnayake-07b7b721a?utm_source=share&utm_campaign=share_via&utm_content=profile&utm_medium=android_app"
+              // github="#"
+              fb="https://www.facebook.com/malithpromoddaya.rathnayake?mibextid=ZbWKwL"
+              // portfolio="#"
             />
             <TeamMemberCard
               name="Thanujaa Venkadakrishnasharma"
               des="Web Developer, Tech Enthusiest, Content Writer"
               image="images/team/thanujaa.jpg"
-              linkedin="#"
-              github="#"
+              linkedin="https://www.linkedin.com/in/thanujaa-venkadakrishnasharma-68164323b/"
+              github="https://github.com/Thanujaavks"
               // fb=""
-              portfolio="#"
+              // portfolio="#"
             />
             <TeamMemberCard
               name="MRF Nuwaifa"
               des="Web Developer, Tech Enthusiest, Content Writer"
               image="images/team/nuwaifa.jpg"
-              linkedin="#"
-              github="#"
-              fb="#"
-              portfolio="#"
+              linkedin="https://web.facebook.com/profile.php?id=61555082611608"
+              github="https://github.com/mrf017 "
+              fb="https://www.linkedin.com/in/mrf-nuwaifa-a0b267290/?msgOverlay=true"
+              // portfolio="#"
             />
           </div>
         </div>
