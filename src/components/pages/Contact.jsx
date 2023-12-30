@@ -1,12 +1,16 @@
 import Footer from "../footer/Footer";
 import NavBar from "../navbar/Navbar";
+import PageTitle from "../titles/PageTitle";
 
 const Contact = () => {
   return (
     <div>
       <NavBar />
+      <div className="pt-[60px] md:pt-[80px]">
+          <PageTitle image="images/pages/page-title.jpg" heading="Contact Us" des="BidWiz is an online auction website that provides a platform for users to bid on a wide range of products and items." />
+        </div>
 
-      <div className="lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
+      <div className="pt-[5%] pb-[5%] px-[10%]">
         <div className="w-full items-center grid lg:grid-cols-2 gap-16">
           <div className="">
             <div className="flex flex-row pb-8">

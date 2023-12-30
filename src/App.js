@@ -8,6 +8,7 @@ import Login from "./components/pages/Login";
 import Categories from "./components/pages/Categories";
 import SignUp from "./components/pages/Signup";
 import ProductDes from "./components/pages/Product";
+import NoPage from "./components/pages/NoPage";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
           <Route path="categories" element={<Categories/>} />
           <Route path="signup" element={<SignUp/>} />
           <Route path="product-des" element={<ProductDes/>} />
+          <Route path="*" element={<NoPage/>} />
         </Routes>
       </BrowserRouter>
     </div>
