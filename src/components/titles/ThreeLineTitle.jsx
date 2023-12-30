@@ -9,7 +9,7 @@ const ThreeLineTitle = (props) => {
             <span className='text-3xl font-bold text-[rgb(37,43,66)] uppercase'>{props.main}</span>
             <span className='text-md text-[#737373] normal-case'>{props.bottom}</span>           
         </div>
-        )
-    }
+        );
+    };
     
     export default ThreeLineTitle
