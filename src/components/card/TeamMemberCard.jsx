@@ -1,9 +1,9 @@
-import { AiFillLinkedin, AiFillGithub, AiFillFacebook } from "react-icons/ai";
+import { AiFillLinkedin, AiFillGithub, AiFillFacebook, AiOutlineGlobal } from "react-icons/ai";
 
 const TeamMemberCard = (props) => {
   return (
     <div className="bg-[white] drop-shadow-md rounded-xl transform hover:scale-103 duration-300 hover:shadow-lg">
-      <a href="#">
+      <a href={props.portfolio} target="_blank" rel="noopener noreferrer">
         <div className="p-2">
         <img
           className="h-[400px] w-full object-cover object-center rounded-t-lg"
@@ -18,20 +18,29 @@ const TeamMemberCard = (props) => {
           </h2>
           <p className="mb-2 text-base text-gray-700">{props.des}</p>
           <div className="flex items-center">
-            <a className="mr-2 text-xl font-semibold  text-[#0052D4]" href={props.linkedin}>
+            <a className="mr-2 text-xl font-semibold  text-[#0052D4]" href={props.linkedin} target="_blank" rel="noopener noreferrer">
               <AiFillLinkedin />{" "}
             </a>
             <a
-              className="text-xl  font-medium  text-[#0052D4]"
-              href={props.fb}
+              className="text-xl mr-2  font-medium  text-[#0052D4]"
+              href={props.github}
+              target="_blank" rel="noopener noreferrer"
             >
               <AiFillGithub />{" "}
             </a>
             <a
-              className="ml-auto text-xl font-medium text-[#0052D4]"
-              href={props.github}
+              className="text-xl  font-medium  text-[#0052D4]"
+              href={props.fb}
+              target="_blank" rel="noopener noreferrer"
             >
               <AiFillFacebook />{" "}
+            </a>
+            <a
+              className="ml-auto text-xl font-medium text-[#0052D4]"
+              href={props.portfolio}
+              target="_blank" rel="noopener noreferrer"
+            >
+              <AiOutlineGlobal />{" "}
             </a>
           </div>
         </div>
