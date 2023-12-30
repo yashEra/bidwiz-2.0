@@ -10,10 +10,7 @@ const Footer = () => {
   return (
     <div className="bg-[#0052D4]">
     <div
-      className=" text-white w-full py-[60px] grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left"
-      style={{
-        padding: "0 9.895833333333333% 4% 9.895833333333333%",
-      }}
+      className=" text-white w-full py-[60px] grid md:grid-cols-2 lg:grid-cols-4 gap-8 text-left px-[5%] md:px-[10%]"
     >
       <div className="flex flex-col items-start pt-8">
         <h2 className="font-bold text-xl py-4">Get In Touch</h2>
@@ -77,7 +74,7 @@ const Footer = () => {
         </ul>
       </div>
     </div>
-    <div className="flex flex-row justify-center p-8"><span className="text-md text-white font-bold">Made With 💗 By BidWiz Team. All Right Reserved.</span></div>
+    <div className="flex flex-row justify-center py-8 px-[5%] md:px-[10%]"><span className="text-md text-white font-bold">Made With 💗 By BidWiz Team. All Right Reserved.</span></div>
     </div>
   );
 };

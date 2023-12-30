@@ -6,7 +6,7 @@ const Contact = () => {
     <div>
       <NavBar />
 
-      <div className="lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[9.895833333333333%]">
+      <div className="lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
         <div className="w-full items-center grid lg:grid-cols-2 gap-16">
           <div className="">
             <div className="flex flex-row pb-8">

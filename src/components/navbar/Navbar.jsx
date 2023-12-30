@@ -16,7 +16,7 @@ const NavBar = () => {
   };
   return (
     <div className="w-full 2xl:h-[100px] lg:h-[80px] sm:h-[79px] bg-while nav-sec fixed bg-white z-50">
-      <div className="max-w-[80.20833333333333%] mx-auto flex justify-between items-center h-full">
+      <div className="max-w-[80%] mx-auto flex justify-between items-center h-full">
         <div>
           <h1 className="text-[#1357DE] font-black">
             <a href="/">BidWiz</a>

@@ -13,7 +13,7 @@ const About = () => {
         <div className="pt-16">
           <PageTitle heading="About US" />
         </div>
-        <div className="flex flex-row py-4 justify-center items-center px-[5%] md:px-[9.895833333333333%]">
+        <div className="flex flex-row py-4 justify-center items-center px-[5%] md:px-[10%]">
           <ThreeLineTitle
             top="Our Team Your Advantage"
             main="Development Team"

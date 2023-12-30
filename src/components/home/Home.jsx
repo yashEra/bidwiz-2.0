@@ -17,11 +17,24 @@ const Home = () => {
         main="BESTSELLER PRODUCTS"
         bottom="Problems trying to resolve the conflict between "
       />
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+
+      <ThreeLineTitle
+        top="Featured Products"
+        main="BESTSELLER PRODUCTS"
+        bottom="Problems trying to resolve the conflict between "
+      />
       <div
-        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
-        style={{
-          padding: "0 9.895833333333333% 4% 9.895833333333333%",
-        }}
+        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5  px-[5%] md:px-[10%] pb-[4%]"
       >
         <ProductCard />
         <ProductCard />
@@ -39,10 +52,7 @@ const Home = () => {
         bottom="Problems trying to resolve the conflict between "
       />
       <div
-        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
-        style={{
-          padding: "0 9.895833333333333% 4% 9.895833333333333%",
-        }}
+        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]"
       >
         <ProductCard />
         <ProductCard />
@@ -53,28 +63,6 @@ const Home = () => {
         <ProductCard />
         <ProductCard />
       </div>
-
-      <ThreeLineTitle
-        top="Featured Products"
-        main="BESTSELLER PRODUCTS"
-        bottom="Problems trying to resolve the conflict between "
-      />
-      <div
-        className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5"
-        style={{
-          padding: "0 9.895833333333333% 4% 9.895833333333333%",
-        }}
-      >
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-        <ProductCard />
-      </div>
-
 
       <Footer />
     </div>
