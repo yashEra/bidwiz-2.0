@@ -8,62 +8,60 @@ import Footer from "../footer/Footer";
 
 const Home = () => {
   return (
-    <>
-      <div>
-        <NavBar />
-        <Hero />
-        <TopSection />
-        <ThreeLineTitle
-          top="Featured Products"
-          main="BESTSELLER PRODUCTS"
-          bottom="Problems trying to resolve the conflict between "
-        />
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
-
-        <ThreeLineTitle
-          top="Featured Products"
-          main="BESTSELLER PRODUCTS"
-          bottom="Problems trying to resolve the conflict between "
-        />
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5  px-[5%] md:px-[10%] pb-[4%]">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
-
-        <ThreeLineTitle
-          top="Featured Products"
-          main="BESTSELLER PRODUCTS"
-          bottom="Problems trying to resolve the conflict between "
-        />
-        <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
-
-        <Footer />
+    <div>
+      <NavBar />
+      <Hero />
+      <TopSection />
+      <ThreeLineTitle
+        top="Featured Products"
+        main="BESTSELLER PRODUCTS"
+        bottom="Problems trying to resolve the conflict between "
+      />
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
       </div>
-    </>
+
+      <ThreeLineTitle
+        top="Featured Products"
+        main="BESTSELLER PRODUCTS"
+        bottom="Problems trying to resolve the conflict between "
+      />
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5  px-[5%] md:px-[10%] pb-[4%]">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+
+      <ThreeLineTitle
+        top="Featured Products"
+        main="BESTSELLER PRODUCTS"
+        bottom="Problems trying to resolve the conflict between "
+      />
+      <div className="grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+        <ProductCard />
+      </div>
+
+      <Footer />
+    </div>
   );
 };
 

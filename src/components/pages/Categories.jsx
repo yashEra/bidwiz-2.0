@@ -6,13 +6,11 @@ import NavBar from "../navbar/Navbar";
 
 const Categories = () => {
   return (
-    <>
-      <div>
-        <NavBar />
+    <div>
+      <NavBar />
 
-        <Footer />
-      </div>
-    </>
+      <Footer />
+    </div>
   );
 };
 
