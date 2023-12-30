@@ -7,7 +7,7 @@ const Contact = () => {
     <div>
       <NavBar />
       <div className="pt-[60px] md:pt-[80px]">
-          <PageTitle image="images/pages/page-title.jpg" heading="Contact Us" des="BidWiz is an online auction website that provides a platform for users to bid on a wide range of products and items." />
+          <PageTitle image="images/pages/contactus-page-title.jpg" heading="Contact Us" des="For any inquiries or assistance, feel free to reach out to us using the contact form below." />
         </div>
 
       <div className="pt-[5%] pb-[5%] px-[10%]">
