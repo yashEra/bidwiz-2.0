@@ -11,8 +11,7 @@ const Hero = () => {
         className="absolute inset-0 -z-10 h-full w-full object-cover object-right md:object-center"
       />
       <div
-        className="w-full h-[100%] lg:flex  lg:flex-row md:block justify-around  text-white text-left items-center"
-        style={{ padding: "9.895833333333333%" }}
+        className="w-full h-[100%] lg:flex  lg:flex-row md:block justify-around  text-white text-left items-center p-[10%]"
       >
         <div className="text-res pt-[50px]">
           <h4 className="font-bold py-1">SUMMER 2023</h4>
