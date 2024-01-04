@@ -1,8 +1,8 @@
-import NavBar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
-import TeamMemberCard from "../card/TeamMemberCard";
-import ThreeLineTitle from "../titles/ThreeLineTitle";
-import PageTitle from "../titles/PageTitle";
+import NavBar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
+import TeamMemberCard from "../components/card/TeamMemberCard";
+import ThreeLineTitle from "../components/titles/ThreeLineTitle";
+import PageTitle from "../components/titles/PageTitle";
 
 const About = () => {
   return (

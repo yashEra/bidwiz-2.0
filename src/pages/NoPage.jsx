@@ -1,5 +1,5 @@
-import Footer from "../footer/Footer";
-import NavBar from "../navbar/Navbar";
+import Footer from "../components/footer/Footer";
+import NavBar from "../components/navbar/Navbar";
 
 const NoPage= () => {
     return(

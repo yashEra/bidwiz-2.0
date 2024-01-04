@@ -3,8 +3,8 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import {
   faCartShopping,
 } from "@fortawesome/free-solid-svg-icons";
-import NavBar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import NavBar from "../components/navbar/Navbar";
+import Footer from "../components/footer/Footer";
 
 const ProductDes = () => {
   const [images, setImages] = useState({

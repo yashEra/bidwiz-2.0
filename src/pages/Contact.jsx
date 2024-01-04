@@ -1,6 +1,6 @@
-import Footer from "../footer/Footer";
-import NavBar from "../navbar/Navbar";
-import PageTitle from "../titles/PageTitle";
+import Footer from "../components/footer/Footer";
+import NavBar from "../components/navbar/Navbar";
+import PageTitle from "../components/titles/PageTitle";
 
 const Contact = () => {
   return (

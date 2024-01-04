@@ -2,13 +2,13 @@ import logo from "./logo.svg";
 import "./App.css";
 import Home from "./components/home/Home";
 import { BrowserRouter, Route, Routes } from "react-router-dom";
-import Contact from "./components/pages/Contact";
-import About from "./components/pages/About";
-import Login from "./components/pages/Login";
-import Categories from "./components/pages/Categories";
-import SignUp from "./components/pages/Signup";
-import ProductDes from "./components/pages/Product";
-import NoPage from "./components/pages/NoPage";
+import Contact from "./pages/Contact";
+import About from "./pages/About";
+import Login from "./pages/Login";
+import Categories from "./pages/Categories";
+import SignUp from "./pages/Signup";
+import ProductDes from "./pages/Product";
+import NoPage from "./pages/NoPage";
 
 function App() {
   return (
