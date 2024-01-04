@@ -1,10 +1,10 @@
 import recat from "react";
-import NavBar from "../navbar/Navbar";
-import Hero from "../hero-section/HeroSection";
-import TopSection from "./TopSection";
-import ThreeLineTitle from "../titles/ThreeLineTitle";
-import ProductCard from "../product/ProductCard";
-import Footer from "../footer/Footer";
+import NavBar from "../components/navbar/Navbar";
+import Hero from "../components/hero-section/HeroSection";
+import TopSection from "../components/home/TopSection";
+import ThreeLineTitle from "../components/titles/ThreeLineTitle";
+import ProductCard from "../components/product/ProductCard";
+import Footer from "../components/footer/Footer";
 
 const Home = () => {
   return (

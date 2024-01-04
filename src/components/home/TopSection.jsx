@@ -1,4 +1,3 @@
-import recat from "react";
 import MobileIcon from "./assest/Mobile.svg";
 import "./assest/css/home.css";
 
