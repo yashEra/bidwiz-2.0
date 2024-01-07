@@ -6,6 +6,7 @@ const Categories = () => {
   return (
     <div>
       <NavBar />
+      
       <Footer />
     </div>
   );
