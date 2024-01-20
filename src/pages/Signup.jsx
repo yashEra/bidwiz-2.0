@@ -3,6 +3,14 @@ import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/Navbar";
 
 const SignUp = () => {
+  axios({
+    method: 'post',
+    url: '/user/12345',
+    data: {
+      firstName: 'Fred',
+      lastName: 'Flintstone'
+    }
+  });
     return(
         <div>
             <NavBar />
