@@ -1,20 +1,47 @@
-import React from 'react'; 
+import React, { useState } from "react";
+import axios from "axios";
 import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/Navbar";
 
 const SignUp = () => {
-  axios({
-    method: 'post',
-    url: '/user/12345',
-    data: {
-      firstName: 'Fred',
-      lastName: 'Flintstone'
-    }
+  const [formData, setFormData] = useState({
+    firstName: "",
+    lastName: "",
+    email: "",
+    phoneNumber: "",
+    password: "",
+    retypePassword: "",
   });
-    return(
-        <div>
-            <NavBar />
-            <div className="flex min-h-full flex-1 flex-col justify-center py-12 lg:px-8 lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+    console.log(formData);
+    const data = {
+      ...formData,
+      first_name: formData.firstName,
+      last_name: formData.lastName,
+      name: formData.firstName + " " + formData.lastName,
+    };
+
+    try {
+      const response = await axios.post(
+        "http://127.0.0.1:8000/users/create-user/",
+        data
+      );
+      console.log(response.data);
+    } catch (error) {
+      console.error("Error submitting form:", error);
+    }
+  };
+  return (
+    <div>
+      <NavBar />
+      <div className="flex min-h-full flex-1 flex-col justify-center py-12 lg:px-8 lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-[#1357DE]">
             Sign up to your account
@@ -22,39 +49,52 @@ const SignUp = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="firstname"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 First Name
               </label>
               <div className="mt-2">
                 <input
                   id="firstname"
-                  name="firstname"
+                  name="firstName"
                   type="text"
                   autoComplete="text"
                   required
+                  value={formData.firstName}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="lastname"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Last Name
               </label>
               <div className="mt-2">
                 <input
                   id="lastname"
-                  name="lastname"
+                  name="lastName"
                   type="text"
                   autoComplete="text"
                   required
+                  value={formData.lastName}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
+              <label
+                htmlFor="email"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
                 Email address
               </label>
               <div className="mt-2">
@@ -64,32 +104,39 @@ const SignUp = () => {
                   type="email"
                   autoComplete="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
             </div>
             <div>
-              <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
-                Prone Number
+              <label
+                htmlFor="phonenumber"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Phone Number
               </label>
               <div className="mt-2">
                 <input
                   id="phonenumber"
-                  name="phonenumber"
+                  name="phoneNumber"
                   type="tel"
                   autoComplete="number"
                   required
+                  value={formData.phoneNumber}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
             </div>
-
             <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                  Password
-                </label>
-              </div>
+              <label
+                htmlFor="password"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Password
+              </label>
               <div className="mt-2">
                 <input
                   id="password"
@@ -97,23 +144,28 @@ const SignUp = () => {
                   type="password"
                   autoComplete="current-password"
                   required
+                  value={formData.password}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
             </div>
             <div>
-              <div className="flex items-center justify-between">
-                <label htmlFor="password" className="block text-sm font-medium leading-6 text-gray-900">
-                 Retype Password
-                </label>
-              </div>
+              <label
+                htmlFor="retypepassword"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Retype Password
+              </label>
               <div className="mt-2">
                 <input
-                  id="password"
-                  name="password"
+                  id="retypepassword"
+                  name="retypePassword"
                   type="password"
                   autoComplete="current-password"
                   required
+                  value={formData.retypePassword}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
@@ -128,20 +180,20 @@ const SignUp = () => {
               </button>
             </div>
           </form>
-
           <p className="mt-10 text-center text-sm text-gray-500">
-            If you have an account?{' '}
-            <a href="login" className="font-semibold leading-6 text-[#1357DE] hover:text-[#23A6F0]">
+            If you have an account?{" "}
+            <a
+              href="login"
+              className="font-semibold leading-6 text-[#1357DE] hover:text-[#23A6F0]"
+            >
               Sign in now!
             </a>
           </p>
         </div>
       </div>
-            <Footer />
-            
-        </div>
-
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default SignUp;
