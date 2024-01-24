@@ -1,12 +1,35 @@
-import React from 'react'; 
+import React, { useState } from 'react';
+import axios from 'axios';
 import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/Navbar";
 
 const Login = () => {
-    return(
-        <div>
-            <NavBar />
-            <div className="flex min-h-full flex-1 flex-col justify-center py-12 lg:px-8 lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
+  const [formData, setFormData] = useState({
+    email: '',
+    password: '',
+  });
+
+  const handleChange = (e) => {
+    const { name, value } = e.target;
+    setFormData({ ...formData, [name]: value });
+  };
+
+  const handleSubmit = async (e) => {
+    e.preventDefault();
+
+    try {
+      const response = await axios.post('http://127.0.0.1:8000/users/login-user/', formData);
+
+      console.log(response.data);
+    } catch (error) {
+      console.error('Error submitting form:', error);
+    }
+  };
+
+  return (
+    <div>
+      <NavBar />
+      <div className="flex min-h-full flex-1 flex-col justify-center py-12 lg:px-8 lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-[#1357DE]">
             Sign in to your account
@@ -14,7 +37,7 @@ const Login = () => {
         </div>
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
-          <form className="space-y-6" action="#" method="POST">
+          <form className="space-y-6" onSubmit={handleSubmit}>
             <div>
               <label htmlFor="email" className="block text-sm font-medium leading-6 text-gray-900">
                 Email address
@@ -26,6 +49,8 @@ const Login = () => {
                   type="email"
                   autoComplete="email"
                   required
+                  value={formData.email}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
@@ -49,6 +74,8 @@ const Login = () => {
                   type="password"
                   autoComplete="current-password"
                   required
+                  value={formData.password}
+                  onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />
               </div>
@@ -72,11 +99,9 @@ const Login = () => {
           </p>
         </div>
       </div>
-            <Footer />
-            
-        </div>
-
-    );
+      <Footer />
+    </div>
+  );
 };
 
 export default Login;
