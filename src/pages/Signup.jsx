@@ -20,7 +20,14 @@ const SignUp = () => {
 
   const handleSubmit = async (e) => {
     e.preventDefault();
-    console.log(formData);
+
+    // Validate form data before submission
+    if (formData.password !== formData.retypePassword) {
+      console.error("Error: Passwords do not match");
+      // You may want to show an error message to the user
+      return;
+    }
+
     const data = {
       ...formData,
       first_name: formData.firstName,
@@ -29,14 +36,31 @@ const SignUp = () => {
     };
 
     try {
-      const response = await axios.post(
-        "http://127.0.0.1:8000/users/create-user/",
-        data
-      );
+      const response = await axios.post("http://127.0.0.1:8000/users/create-user/", data);
       console.log(response.data);
+      if (response.error === 'email already exists') {
+        console.log(response.error);
+
+      }
+
+      // You may want to provide feedback to the user upon successful submission
     } catch (error) {
+      
       console.error("Error submitting form:", error);
+    
+      // Access error response details
+      // if (error.response) {
+      //   console.error("Server responded with error status:", error.response.status);
+      //   console.error("Error details:", error.response.data);
+      // } else if (error.request) {
+      //   console.error("No response received from the server");
+      // } else {
+      //   console.error("Error setting up the request:", error.message);
+      // }
+    
+      // You may want to show an error message to the user
     }
+    
   };
   return (
     <div>
