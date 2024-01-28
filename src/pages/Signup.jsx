@@ -2,13 +2,18 @@ import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    username:"",
     phoneNumber: "",
+    birth_date:"",
     password: "",
     retypePassword: "",
   });
@@ -34,6 +39,7 @@ const SignUp = () => {
         data
       );
       console.log(response.data);
+      navigate('/')
     } catch (error) {
       console.error("Error submitting form:", error);
     }
@@ -50,6 +56,26 @@ const SignUp = () => {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={handleSubmit}>
+            <div>
+              <label
+                htmlFor="firstname"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                User Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="firstname"
+                  name="username"
+                  type="text"
+                  autoComplete="text"
+                  required
+                  value={formData.username}
+                  onChange={handleChange}
+                  className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
+                />
+              </div>
+            </div>
             <div>
               <label
                 htmlFor="firstname"
@@ -125,6 +151,26 @@ const SignUp = () => {
                   autoComplete="number"
                   required
                   value={formData.phoneNumber}
+                  onChange={handleChange}
+                  className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
+                />
+              </div>
+            </div>
+            <div>
+              <label
+                htmlFor="phonenumber"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Birth date
+              </label>
+              <div className="mt-2">
+                <input
+                  id="phonenumber"
+                  name="birth_date"
+                  type="date"
+                  autoComplete="number"
+                  required
+                  value={formData.birth_date}
                   onChange={handleChange}
                   className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
                 />

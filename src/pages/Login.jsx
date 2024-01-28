@@ -2,8 +2,14 @@ import React, { useState } from 'react';
 import axios from 'axios';
 import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/Navbar";
+import Cookies from 'js-cookie';
+import { useNavigate } from 'react-router-dom';
+
 
 const Login = () => {
+
+  const navigate = useNavigate()
+
   const [formData, setFormData] = useState({
     email: '',
     password: '',
@@ -18,9 +24,13 @@ const Login = () => {
     e.preventDefault();
 
     try {
-      const response = await axios.post('http://127.0.0.1:8000/users/login-user/', formData);
+      const response = await axios.post('http://127.0.0.1:8000/users/login/', formData);
 
       console.log(response.data);
+      Cookies.set('token', response.data.token, { expires: 7 });
+      navigate('/')
+
+      
     } catch (error) {
       console.error('Error submitting form:', error);
     }
