@@ -44,7 +44,7 @@ const SignUp = () => {
       const response = await axios.post("http://127.0.0.1:8000/users/create-user/", data);
       console.log(response.data);
 
-      navigate('/')
+      navigate('/login')
 
       if (response.error === 'email already exists') {
         console.log(response.error);

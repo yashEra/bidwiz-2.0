@@ -3,12 +3,14 @@ import axios from "axios";
 import NavBar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { useParams } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 
 const ProductDes = () => {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
+  const navigate = useNavigate()
 
   const [bidAmount, setBidAmount] = useState("");
   const { itemId } = useParams();
@@ -18,6 +20,13 @@ const ProductDes = () => {
     try {
       const responseToken = await axios.get("http://127.0.0.1:8000/users/csrf/");
       const csrfToken = responseToken.data.csrfToken;
+      const targetURL = `http://localhost:3000/product-des/8`;
+  
+      // Validate bid amount
+      if (parseFloat(bidAmount) <= parseFloat(item.current_max_bid)) {
+        console.error("Error: Bid amount must be greater than the current bid");
+        return; // Stop the bid submission if validation fails
+      }
   
       const response = await fetch(`http://127.0.0.1:8000/users/items/${item.item_id}/bid/`, {
         method: "POST",
@@ -25,12 +34,13 @@ const ProductDes = () => {
           "Content-Type": "application/json",
           "X-CSRFToken": csrfToken,
         },
-        body: JSON.stringify({ current_max_bid: parseFloat(bidAmount) }), // Ensure bidAmount is converted to a float
+        body: JSON.stringify({ current_max_bid: parseFloat(bidAmount) }),
       });
   
       if (response.ok) {
         // Handle success response from the server
         console.log("Bid submitted successfully");
+        // navigate(targetURL, { replace: true });
       } else {
         // Handle non-success response from the server
         console.error(
@@ -44,21 +54,6 @@ const ProductDes = () => {
       console.error("Error:", error);
     }
   };
-  
-
-
-  // useEffect(() => {
-  //   const fetchCsrfToken = async () => {
-  //     try {
-  //       const response = await axios.get("http://127.0.0.1:8000/csrf/");
-  //       csrfToken = response.data.csrfToken;
-  //     } catch (error) {
-  //       console.error("Error fetching CSRF token:", error);
-  //     }
-  //   };
-
-  //   fetchCsrfToken();
-  // }, []);
 
 
   const [images, setImages] = useState({

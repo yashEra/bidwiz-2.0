@@ -50,7 +50,7 @@ const Home = () => {
       <ThreeLineTitle
         top="Featured Products"
         main="BESTSELLER PRODUCTS"
-        bottom="Problems trying to resolve the conflict between "
+        bottom="Try to get win this offer. Few days more"
       />
       {loading ? (
         <p>Loading...</p>
@@ -75,12 +75,12 @@ const Home = () => {
       )}
 
       <ThreeLineTitle
-        top="Featured Products"
+        top="Latest Fasions"
         main="FASION PRODUCTS"
-        bottom="Problems trying to resolve the conflict between "
+        bottom="Try to get win this offer. Few days more "
       />
       <div className="flex justify-center">
-      <ul className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%] pt-16">
+      <ul className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%] pt-8">
           {fasionsItems.map(item => (
             <li key={item.item_id}>
               <ProductCard
@@ -97,12 +97,12 @@ const Home = () => {
       </div>
 
       <ThreeLineTitle
-        top="Featured Products"
+        top="Best Painting"
         main="ARTS PRODUCTS"
-        bottom="Problems trying to resolve the conflict between "
+        bottom="Try to get win this offer. Few days more "
       />
       <div className="flex justify-center">
-      <ul className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%] pt-16">
+      <ul className="w-[1200px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5  pb-[4%] pt-8">
           {artsItems.map(item => (
             <li key={item.item_id}>
               <ProductCard

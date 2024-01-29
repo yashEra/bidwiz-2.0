@@ -9,6 +9,6 @@ export default function PrivateRoute() {
   console.log(authToken)
   
   return (
-    (authToken) ? <Outlet /> : <Navigate to={'/login'} />
+    (authToken) ? <Outlet /> : <Navigate to={'/signin'} />
   )
 }

@@ -11,16 +11,21 @@ import ProductDes from "./pages/Product";
 import NoPage from "./pages/NoPage";
 
 import axios from "axios";
-import Cookies from 'js-cookie';
+import Cookies from "js-cookie";
 import PrivateRoute from "./utils/PrivateRoute";
+import Electronic from "./pages/Electronics";
+import Art from "./pages/Art";
+import Fashion from "./pages/Fashion";
+import LoginT from "./pages/LoginTest";
+import UserProfile from "./pages/UserProfile";
 
 axios.defaults.withCredentials = true;
 
-// if auth token available then config 
+// if auth token available then config
 axios.interceptors.request.use(
   (config) => {
     // const authToken = 'test';
-    const authToken = Cookies?.get('token');
+    const authToken = Cookies?.get("token");
 
     if (authToken) {
       config.headers.Authorization = `Token ${authToken}`;
@@ -30,48 +35,42 @@ axios.interceptors.request.use(
   },
   (error) => {
     if (axios.isCancel(error)) {
-      console.error('Request canceled:', error.message);
+      console.error("Request canceled:", error.message);
     } else if (error.response) {
-      console.error('Server responded with an error:', error.response.data);
-      console.error('Status code:', error.response.status);
+      console.error("Server responded with an error:", error.response.data);
+      console.error("Status code:", error.response.status);
     } else if (error.request) {
-      console.error('No response received:', error.request);
+      console.error("No response received:", error.request);
     } else {
-      console.error('Request setup error:', error.message);
+      console.error("Request setup error:", error.message);
     }
     return Promise.reject(error);
   }
 );
-
-import Electronic from "./pages/Electronics";
-import Art from "./pages/Art";
-import Fashion from "./pages/Fashion";
-
 
 function App() {
   return (
     <div className="">
       <BrowserRouter>
         <Routes>
+          <Route index element={<Home />} />
+          <Route path="/contact" element={<Contact />} />
+          <Route path="/about" element={<About />} />
+          <Route path="/login" element={<Login />} />
+          <Route path="/signin" element={<LoginT />} />
 
-          <Route index element={<Home/>} />
-          <Route path="contact" element={<Contact/>} />
-          <Route path="about" element={<About/>} />
-          <Route path="login" element={<Login/>} />
-            
-          <Route element={<PrivateRoute />} >
-            <Route path="categories" element={<Categories />} />
-              <Route path="product-des/:itemId" element={<ProductDes/>} />      
-          <Route path="electronics" element={<Electronic/>} />
-          <Route path="arts" element={<Art/>} />
-          <Route path="fasions" element={<Fashion/>} />
+          <Route element={<PrivateRoute />}>
+            <Route path="/categories" element={<Categories />} />
+            <Route path="/product-des/:itemId" element={<ProductDes />} />
+            <Route path="/user" element={<UserProfile />} />
+
           </Route>
-          <Route path="signup" element={<SignUp/>} />
+          <Route path="/electronics" element={<Electronic />} />
+            <Route path="/arts" element={<Art />} />
+            <Route path="/fasions" element={<Fashion />} />
+          <Route path="/signup" element={<SignUp />} />
 
-
-
-          <Route path="*" element={<NoPage/>} />
-
+          <Route path="*" element={<NoPage />} />
         </Routes>
       </BrowserRouter>
     </div>
