@@ -12,6 +12,22 @@ const Home = () => {
     const [items, setItems] = useState([]);
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(null);
+
+    const [fasionsItems, setFasionsItems] = useState([]);
+
+    useEffect(() => {
+      axios.get('http://127.0.0.1:8000/users/fasions/')
+        .then(response => setFasionsItems(response.data))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []);
+
+    const [artsItems, setArtsItems] = useState([]);
+
+    useEffect(() => {
+      axios.get('http://127.0.0.1:8000/users/arts/')
+        .then(response => setArtsItems(response.data))
+        .catch(error => console.error('Error fetching data:', error));
+    }, []);
   
     useEffect(() => {
       axios.get('http://127.0.0.1:8000/users/items/')
@@ -59,38 +75,42 @@ const Home = () => {
 
       <ThreeLineTitle
         top="Featured Products"
-        main="BESTSELLER PRODUCTS"
+        main="FASION PRODUCTS"
         bottom="Problems trying to resolve the conflict between "
       />
       <div className="flex justify-center">
-        <div className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
+      <ul className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%] pt-16">
+          {fasionsItems.map(item => (
+            <li key={item.item_id}>
+              <ProductCard
+                name={item.item_name}
+                cover={item.cover_image}
+                description={item.description}
+                price={item.current_max_bid}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
 
       <ThreeLineTitle
         top="Featured Products"
-        main="BESTSELLER PRODUCTS"
+        main="ARTS PRODUCTS"
         bottom="Problems trying to resolve the conflict between "
       />
       <div className="flex justify-center">
-        <div className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
-        </div>
+      <ul className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%] pt-16">
+          {artsItems.map(item => (
+            <li key={item.item_id}>
+              <ProductCard
+                name={item.item_name}
+                cover={item.cover_image}
+                description={item.description}
+                price={item.current_max_bid}
+              />
+            </li>
+          ))}
+        </ul>
       </div>
 
       <Footer />
