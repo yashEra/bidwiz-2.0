@@ -66,6 +66,7 @@ const Home = () => {
                   cover={item.cover_image}
                   description={item.description}
                   price={item.current_max_bid}
+                  id={item.item_id}
                 />
               </li>
             ))}
@@ -87,6 +88,8 @@ const Home = () => {
                 cover={item.cover_image}
                 description={item.description}
                 price={item.current_max_bid}
+                id={item.item_id}
+
               />
             </li>
           ))}
@@ -107,6 +110,8 @@ const Home = () => {
                 cover={item.cover_image}
                 description={item.description}
                 price={item.current_max_bid}
+                id={item.item_id}
+
               />
             </li>
           ))}

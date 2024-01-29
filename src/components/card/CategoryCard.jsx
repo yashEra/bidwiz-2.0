@@ -4,7 +4,7 @@ const CategoryCard = (props) => {
       <a href={props.url}>
         <img
           className="h-72 md:h-48 w-full object-cover object-center rounded-lg"
-          src={`http://localhost:3000/images/items/${props.cover}`}
+          src={`http://localhost:3000/images/items?${props.cover}`}
           alt="Product Image"
         />
 
