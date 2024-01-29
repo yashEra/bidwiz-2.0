@@ -9,6 +9,9 @@ import Categories from "./pages/Categories";
 import SignUp from "./pages/Signup";
 import ProductDes from "./pages/Product";
 import NoPage from "./pages/NoPage";
+import Electronic from "./pages/Electronics";
+import Art from "./pages/Art";
+import Fashion from "./pages/Fashion";
 
 function App() {
   return (
@@ -22,6 +25,11 @@ function App() {
           <Route path="categories" element={<Categories/>} />
           <Route path="signup" element={<SignUp/>} />
           <Route path="product-des" element={<ProductDes/>} />
+          <Route path="electonics" element={<Electronic/>} />
+          <Route path="arts" element={<Art/>} />
+          <Route path="fasions" element={<Fashion/>} />
+
+
           <Route path="*" element={<NoPage/>} />
         </Routes>
       </BrowserRouter>

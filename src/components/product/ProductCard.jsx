@@ -15,7 +15,7 @@ const ProductCard = (props) => {
           <p className="mb-2 text-base text-gray-700">
             {props.description
               ? props.description.length > 29
-                ? `${props.description.substring(0, 29)}...`
+                ? `${props.description.substring(0, 25)}...`
                 : props.description
               : "No description available"}
           </p>
