@@ -23,9 +23,9 @@ const ProductDes = () => {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
-          "X-CSRFToken": csrfToken,  // Include CSRF token in headers
+          "X-CSRFToken": csrfToken,
         },
-        body: JSON.stringify({ current_max_bid: bidAmount }),
+        body: JSON.stringify({ current_max_bid: parseFloat(bidAmount) }), // Ensure bidAmount is converted to a float
       });
   
       if (response.ok) {
