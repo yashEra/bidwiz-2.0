@@ -1,12 +1,66 @@
-import React, { useState } from "react";
-import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-import {
-  faCartShopping,
-} from "@fortawesome/free-solid-svg-icons";
+import React, { useState, useEffect } from "react";
+import axios from "axios";
 import NavBar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
+import { useParams } from "react-router-dom";
+
 
 const ProductDes = () => {
+  const [item, setItem] = useState(null);
+  const [loading, setLoading] = useState(true);
+  const [error, setError] = useState(null);
+
+  const [bidAmount, setBidAmount] = useState("");
+  const { itemId } = useParams();
+  let csrfToken = '';
+
+  const handleBidSubmission = async () => {
+    try {
+      const responseToken = await axios.get("http://127.0.0.1:8000/users/csrf/");
+      const csrfToken = responseToken.data.csrfToken;
+  
+      const response = await fetch(`http://127.0.0.1:8000/users/items/${item.item_id}/bid/`, {
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+          "X-CSRFToken": csrfToken,
+        },
+        body: JSON.stringify({ current_max_bid: parseFloat(bidAmount) }), // Ensure bidAmount is converted to a float
+      });
+  
+      if (response.ok) {
+        // Handle success response from the server
+        console.log("Bid submitted successfully");
+      } else {
+        // Handle non-success response from the server
+        console.error(
+          "Error submitting bid:",
+          response.status,
+          response.statusText
+        );
+      }
+    } catch (error) {
+      // Handle network or other errors
+      console.error("Error:", error);
+    }
+  };
+  
+
+
+  // useEffect(() => {
+  //   const fetchCsrfToken = async () => {
+  //     try {
+  //       const response = await axios.get("http://127.0.0.1:8000/csrf/");
+  //       csrfToken = response.data.csrfToken;
+  //     } catch (error) {
+  //       console.error("Error fetching CSRF token:", error);
+  //     }
+  //   };
+
+  //   fetchCsrfToken();
+  // }, []);
+
+
   const [images, setImages] = useState({
     img1: "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
     img2: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
@@ -16,7 +70,37 @@ const ProductDes = () => {
 
   const [activeImg, setActiveImage] = useState(images.img1);
 
-  const [amount, setAmount] = useState(1);
+
+
+  useEffect(() => {
+    const fetchData = async () => {
+      try {
+        const response = await axios.get(
+          `http://127.0.0.1:8000/users/items/${itemId}/`
+        );
+        setItem(response.data);
+        console.log(response.data);
+      } catch (error) {
+        console.error("Error fetching data:", error);
+        setError(error.message);
+      } finally {
+        setLoading(false);
+      }
+    };
+
+    fetchData();
+  }, [itemId]);
+  if (loading) {
+    return <p>Loading...</p>;
+  }
+
+  if (error) {
+    return <p>Error: {error}</p>;
+  }
+
+  if (!item) {
+    return <p>No item found for the specified ID.</p>;
+  }
 
   return (
     <>
@@ -60,38 +144,38 @@ const ProductDes = () => {
           <div className="flex flex-col gap-4 lg:w-2/4">
             <div>
               <span className=" text-[#0052D4] font-semibold">
-                2023 edition
+                End Date: {item.end_date}
               </span>
-              <h1 className="text-3xl font-bold text-[#6FB1FC]">Macbook Pro</h1>
+              <h1 className="text-3xl font-bold text-[#6FB1FC]">
+                {item.item_name}
+              </h1>
             </div>
-            <p className="text-gray-700">
-              Con un'ammortizzazione incredibile per sostenerti in tutti i tuoi
-              chilometri, Invincible 3 offre un livello di comfort elevatissimo
-              sotto il piede per aiutarti a dare il massimo oggi, domani e
-              oltre. Questo modello incredibilmente elastico e sostenitivo, è
-              pensato per dare il massimo lungo il tuo percorso preferito e fare
-              ritorno a casa carico di energia, in attesa della prossima corsa.
-            </p>
-            <h6 className="text-2xl font-semibold"> Current BID <span className="text-[#0052D4]">$ 19.00</span></h6>
+            <p className="text-gray-700">{item.description}</p>
+            <h6 className="text-2xl font-semibold">
+              {" "}
+              Current BID{" "}
+              <span className="text-[#0052D4]">LKR {item.current_max_bid}</span>
+            </h6>
             <div className="flex flex-row items-center gap-12">
               <div className="flex flex-row items-center">
-                <button
-                  className="bg-gray-200 py-2 px-5 rounded-lg text-[#0052D4] text-3xl"
-                  onClick={() => setAmount((prev) => prev - 1)}
-                >
-                  -
-                </button>
-                <span className="py-4 px-6 rounded-lg">{amount}</span>
-                <button
-                  className="bg-gray-200 py-2 px-4 rounded-lg text-[#0052D4] text-3xl"
-                  onClick={() => setAmount((prev) => prev + 1)}
-                >
-                  +
-                </button>
+                <form>
+                  <input
+                    type="text"
+                    name="current_max_bid"
+                    id="current_max_bid"
+                    placeholder="Enter Your Bid"
+                    value={bidAmount}
+                    onChange={(e) => setBidAmount(e.target.value)}
+                  />
+                  <button
+                    type="button"
+                    className="bg-[#0052D4] text-white font-semibold py-3 px-8 rounded-xl h-full pl-8"
+                    onClick={handleBidSubmission}
+                  >
+                    Bid
+                  </button>
+                </form>
               </div>
-              <button className="bg-[#0052D4] text-white font-semibold py-3 px-8 rounded-xl h-full">
-              Bid
-              </button>
             </div>
           </div>
         </div>

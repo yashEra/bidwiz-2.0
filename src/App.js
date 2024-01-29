@@ -9,6 +9,7 @@ import Categories from "./pages/Categories";
 import SignUp from "./pages/Signup";
 import ProductDes from "./pages/Product";
 import NoPage from "./pages/NoPage";
+
 import axios from "axios";
 import Cookies from 'js-cookie';
 import PrivateRoute from "./utils/PrivateRoute";
@@ -42,21 +43,35 @@ axios.interceptors.request.use(
   }
 );
 
+import Electronic from "./pages/Electronics";
+import Art from "./pages/Art";
+import Fashion from "./pages/Fashion";
+
+
 function App() {
   return (
     <div className="">
       <BrowserRouter>
         <Routes>
-          <Route index element={<Home />} />
-          <Route path="contact" element={<Contact />} />
-          <Route path="about" element={<About />} />
-          <Route path="login" element={<Login />} />
-          <Route path="signup" element={<SignUp />} />
+
+          <Route index element={<Home/>} />
+          <Route path="contact" element={<Contact/>} />
+          <Route path="about" element={<About/>} />
+          <Route path="login" element={<Login/>} />
+            
           <Route element={<PrivateRoute />} >
             <Route path="categories" element={<Categories />} />
-            <Route path="product-des" element={<ProductDes />} />
+              <Route path="product-des/:itemId" element={<ProductDes/>} />      
+          <Route path="electronics" element={<Electronic/>} />
+          <Route path="arts" element={<Art/>} />
+          <Route path="fasions" element={<Fashion/>} />
           </Route>
-          <Route path="*" element={<NoPage />} />
+          <Route path="signup" element={<SignUp/>} />
+
+
+
+          <Route path="*" element={<NoPage/>} />
+
         </Routes>
       </BrowserRouter>
     </div>
