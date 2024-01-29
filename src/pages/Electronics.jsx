@@ -5,7 +5,7 @@ import React, { useState, useEffect } from 'react';
 import axios from 'axios';
 import ProductCard from '../components/product/ProductCard';
 
-const Categories = () => {
+const Electronics = () => {
     const [items, setItems] = useState([]);
 
     useEffect(() => {
@@ -17,9 +17,6 @@ const Categories = () => {
   return (
     <div>
       <NavBar />
- 
-
-
     <div>
         <h1>Item List</h1>
         <ul className="max-w-[1835px] grid md:grid-cols-2 xl:grid-cols-4 gap-4 2xl:grid-cols-5 px-[5%] md:px-[10%] pb-[4%]">
