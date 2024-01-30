@@ -6,7 +6,7 @@ import Cookies from 'js-cookie';
 import { useNavigate } from 'react-router-dom';
 
 
-const Login = () => {
+const LoginT = () => {
 
   const navigate = useNavigate()
 
@@ -28,7 +28,7 @@ const Login = () => {
 
       console.log(response.data);
       Cookies.set('token', response.data.token, { expires: 7 });
-      navigate('/')
+      navigate('/user')
 
       
     } catch (error) {
@@ -42,7 +42,7 @@ const Login = () => {
       <div className="flex min-h-full flex-1 flex-col justify-center py-12 lg:px-8 lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-[#1357DE]">
-            Sign in to your account
+            Before Bidding Sign in to your account
           </h2>
         </div>
 
@@ -114,4 +114,4 @@ const Login = () => {
   );
 };
 
-export default Login;
+export default LoginT;
