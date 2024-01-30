@@ -21,13 +21,11 @@ const ProductDes = () => {
       const responseToken = await axios.get("http://127.0.0.1:8000/users/csrf/");
       const csrfToken = responseToken.data.csrfToken;
 
-      // Validate bid amount
       if (parseFloat(bidAmount) <= parseFloat(item.current_max_bid)) {
         console.error("Error: Bid amount must be greater than the current bid");
-        return; // Stop the bid submission if validation fails
+        return; 
       }
 
-      // Submit bid
       const response = await fetch(`http://127.0.0.1:8000/users/items/${item.item_id}/bid/`, {
         method: "POST",
         headers: {
@@ -36,7 +34,7 @@ const ProductDes = () => {
         },
         body: JSON.stringify({ current_max_bid: parseFloat(bidAmount) }),
       });
-
+          window.location.reload()
       if (response.ok) {
         // Handle successful bid submission
         console.log("Bid submitted successfully");

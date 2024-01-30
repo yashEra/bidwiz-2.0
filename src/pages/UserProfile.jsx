@@ -3,6 +3,7 @@ import NavBar from "../components/navbar/Navbar";
 import CategoryCard from "../components/card/CategoryCard";
 import React, { useState, useEffect } from "react";
 import axios from "axios";
+import Cookies from "js-cookie";
 
 const UserProfile = () => {
   const [userData, setUserData] = useState({});
@@ -16,7 +17,9 @@ const UserProfile = () => {
       localStorage.removeItem("userDetails");
       
       // Clear cookies
-      document.cookie = " ";
+      // document.cookie = " ";
+      Cookies.remove('token');
+
   
       // Reset state
       setUserData({});
