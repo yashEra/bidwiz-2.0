@@ -1,6 +1,9 @@
 import { useState } from "react";
 import { AiOutlineMenu, AiOutlineClose } from "react-icons/ai";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, { useEffect } from "react";
+import Cookies from "js-cookie";
+
 import {
   faMagnifyingGlass,
   faCartShopping,
@@ -11,9 +14,56 @@ import "./assest/css/nav-style.css";
 
 const NavBar = () => {
   const [nav, setNav] = useState(false);
+  const [isLoggedIn, setIsLoggedIn] = useState(false);
+  const [userName, setUserName] = useState("");
+
   const handleNav = () => {
     setNav(!nav);
   };
+  let username = "Your Profile";
+
+  useEffect(() => {
+    const userToken = Cookies.get("token");
+
+    if (userToken) {
+      setIsLoggedIn(true);
+      // Fetch user details from local storage (you may need to adjust this based on your actual data structure)
+      const storedUserName = localStorage.getItem("username");
+      // console.log(storedUserName)
+
+      username = storedUserName;
+      if (storedUserName) {
+        setUserName(storedUserName);
+      } else {
+        // Fetch user details from your API
+        const fetchUserDetails = async () => {
+          try {
+            const response = await fetch("your_user_details_api_endpoint", {
+              headers: {
+                Authorization: `Bearer ${userToken}`,
+              },
+            });
+
+            if (!response.ok) {
+              throw new Error("Failed to fetch user details");
+            }
+
+            const userData = await response.json();
+            setUserName(userData.username);
+
+            // Save the user name to local storage for future use
+            localStorage.setItem("username", userData.username);
+          } catch (error) {
+            console.error("Error fetching user details:", error);
+            // Handle the error appropriately
+          }
+        };
+
+        fetchUserDetails();
+      }
+    }
+  }, []);
+
   return (
     <>
       <div className="w-full 2xl:h-[100px] lg:h-[80px] sm:h-[79px] bg-while nav-sec fixed bg-white drop-shadow-sm z-50">
@@ -75,17 +125,33 @@ const NavBar = () => {
             >
               <ul>
                 <li className="text-xl py-4 px-14">
-                  <a href="categories">Categories</a>
+                  <a href="/categories">Categories</a>
                 </li>
                 <li className="text-xl py-4 px-14">
-                  <a href="about">About Us</a>
+                  <a href="/about">About Us</a>
                 </li>
                 <li className="text-xl py-4 px-14">
-                  <a href="contact">Contact Us</a>
+                  <a href="/contact">Contact Us</a>
                 </li>
-                <li className="text-xl py-4 px-14">
-                  <a href="login">Login / Register</a>
-                </li>
+                {isLoggedIn ? (
+                  <>
+                    <li className="text-xl py-4 px-14">
+                      <FontAwesomeIcon icon={faUser} />
+                      <a href="/user" className="p-2">
+                      <span>{username}</span>
+                      </a>
+                    </li>
+                  </>
+                ) : (
+                  <li className="p-4">
+                    <FontAwesomeIcon icon={faUser} />
+                    <a href="/login">
+                      <span className="text-xl py-4 px-4">
+                        Login / Register
+                      </span>
+                    </a>
+                  </li>
+                )}
                 <li className="text-xl py-4 px-14">
                   <form className="flex flex-row justify-between">
                     <input
@@ -107,14 +173,26 @@ const NavBar = () => {
           </div>
           <div className="hidden lg:flex">
             <ul className="flex text-[#23A6F0] items-center">
-              <li className="p-4">
-                <FontAwesomeIcon icon={faUser} />
-                <a href="login">
-                  <span className="px-4 font-bold text-sm">
-                    Login / Register
-                  </span>
-                </a>
-              </li>
+            {isLoggedIn ? (
+                  <>
+                    <li className="text-md font-bold py-4 px-8">
+                    <a href="/user">
+                      <FontAwesomeIcon icon={faUser} />
+                      {/* <a href="/user"> */}
+                      <span className="p-2">{username}</span>
+                      </a>
+                    </li>
+                  </>
+                ) : (
+                  <li className="p-4">
+                    <FontAwesomeIcon icon={faUser} />
+                    <a href="/login">
+                      <span className="text-md font-bold py-4 p-2">
+                        Login / Register
+                      </span>
+                    </a>
+                  </li>
+                )}
               <li className="p-4">
                 <FontAwesomeIcon icon={faMagnifyingGlass} />
               </li>

@@ -21,13 +21,16 @@ const Categories = () => {
       <NavBar />
 
       <div className="pt-[50px]">
-        <TwoLineTitle top="More relible digital item" main="Electronic Items" />
+        <TwoLineTitle top="High Quality Products" main="Catogories" />
         <div className="flex justify-center  px-[5%] md:px-[10%] pb-[4%]">
 
-        <div className="md:w-auto lg:w-[1140px] grid md:grid-cols-2 xl:grid-cols-3 gap-4">
-          <CategoryCard name="Electronic Items" cover="cover-default" url="electronics" />
-          <CategoryCard name="arts" cover="cover-default" url="arts" />
-          <CategoryCard name="Fasions" cover="cover-default" url="fasions" />
+        <div className="md:w-auto lg:w-[1140px] grid md:grid-cols-2 xl:grid-cols-3 gap-4 text-center">
+          <CategoryCard name="Electronic Items" cover="cover-default.jpg" url="/electronics" />
+          <CategoryCard name="Arts Items" cover="oil.jpg" url="/arts" />
+          <CategoryCard name="Fasions Items" cover="handbag.jpg" url="/fasions" />
+          <CategoryCard name="Mobile Devices" cover="smart.jpg" url="/mobile" />
+          <CategoryCard name="Watches" cover="watch.jpg" url="/" />
+          <CategoryCard name="Homeware" cover="coffee.jpg" url="/" />
           
 
 

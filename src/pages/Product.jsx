@@ -2,37 +2,47 @@ import React, { useState, useEffect } from "react";
 import axios from "axios";
 import NavBar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
-import { useParams } from "react-router-dom";
-
+import { useParams, Link } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
 
 const ProductDes = () => {
   const [item, setItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-
   const [bidAmount, setBidAmount] = useState("");
+  const [images, setImages] = useState({});
+  const [activeImg, setActiveImage] = useState('');
+
   const { itemId } = useParams();
-  let csrfToken = '';
+  const navigate = useNavigate();
 
   const handleBidSubmission = async () => {
     try {
       const responseToken = await axios.get("http://127.0.0.1:8000/users/csrf/");
       const csrfToken = responseToken.data.csrfToken;
-  
+
+      // Validate bid amount
+      if (parseFloat(bidAmount) <= parseFloat(item.current_max_bid)) {
+        console.error("Error: Bid amount must be greater than the current bid");
+        return; // Stop the bid submission if validation fails
+      }
+
+      // Submit bid
       const response = await fetch(`http://127.0.0.1:8000/users/items/${item.item_id}/bid/`, {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
           "X-CSRFToken": csrfToken,
         },
-        body: JSON.stringify({ current_max_bid: parseFloat(bidAmount) }), // Ensure bidAmount is converted to a float
+        body: JSON.stringify({ current_max_bid: parseFloat(bidAmount) }),
       });
-  
+
       if (response.ok) {
-        // Handle success response from the server
+        // Handle successful bid submission
         console.log("Bid submitted successfully");
+        // You may want to navigate or perform additional actions here
       } else {
-        // Handle non-success response from the server
+        // Handle non-successful bid submission
         console.error(
           "Error submitting bid:",
           response.status,
@@ -44,41 +54,24 @@ const ProductDes = () => {
       console.error("Error:", error);
     }
   };
-  
-
-
-  // useEffect(() => {
-  //   const fetchCsrfToken = async () => {
-  //     try {
-  //       const response = await axios.get("http://127.0.0.1:8000/csrf/");
-  //       csrfToken = response.data.csrfToken;
-  //     } catch (error) {
-  //       console.error("Error fetching CSRF token:", error);
-  //     }
-  //   };
-
-  //   fetchCsrfToken();
-  // }, []);
-
-
-  const [images, setImages] = useState({
-    img1: "https://images.unsplash.com/photo-1468436139062-f60a71c5c892?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    img2: "https://images.unsplash.com/photo-1517336714731-489689fd1ca8?q=80&w=1452&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    img3: "https://images.unsplash.com/photo-1541807084-5c52b6b3adef?q=80&w=1374&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-    img4: "https://images.unsplash.com/photo-1611186871348-b1ce696e52c9?q=80&w=1470&auto=format&fit=crop&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D",
-  });
-
-  const [activeImg, setActiveImage] = useState(images.img1);
-
-
 
   useEffect(() => {
     const fetchData = async () => {
       try {
-        const response = await axios.get(
-          `http://127.0.0.1:8000/users/items/${itemId}/`
-        );
+        const response = await axios.get(`http://127.0.0.1:8000/users/items/${itemId}/`);
         setItem(response.data);
+
+        // Update the images state with dynamic image URLs from Django
+        setImages({
+          img1: response.data.cover_image,
+          img2: response.data.imageone,
+          img3: response.data.imagetwo,
+          img4: response.data.imagethree,
+        });
+
+        // Set the first image as the active image
+        setActiveImage(response.data.cover_image);
+
         console.log(response.data);
       } catch (error) {
         console.error("Error fetching data:", error);
@@ -90,6 +83,7 @@ const ProductDes = () => {
 
     fetchData();
   }, [itemId]);
+
   if (loading) {
     return <p>Loading...</p>;
   }
@@ -109,41 +103,26 @@ const ProductDes = () => {
         <div className="flex flex-col justify-between lg:flex-row gap-16 items-center max-w-7xl">
           <div className="flex flex-col gap-6 lg:w-2/4">
             <img
-              src={activeImg}
-              alt=""
+              src={`http://localhost:3000/images/items/${activeImg}`}
+              alt={`Product Image ${Object.keys(images).find(key => images[key] === activeImg) + 1}`}
               className="w-full h-full aspect-square object-cover rounded-xl object-center"
             />
             <div className="grid grid-cols-4 md:gap-4 gap-2 w-full">
-              <img
-                src={images.img1}
-                alt=""
-                className="w-full md:h-24 h-16  rounded-md cursor-pointer aspect-square object-cover object-center"
-                onClick={() => setActiveImage(images.img1)}
-              />
-              <img
-                src={images.img2}
-                alt=""
-                className="w-full md:h-24 h-16 rounded-md cursor-pointer oaspect-square object-cover object-center"
-                onClick={() => setActiveImage(images.img2)}
-              />
-              <img
-                src={images.img3}
-                alt=""
-                className="w-full md:h-24 h-16 rounded-md cursor-pointer aspect-square object-cover object-center"
-                onClick={() => setActiveImage(images.img3)}
-              />
-              <img
-                src={images.img4}
-                alt=""
-                className="w-full md:h-24 h-16 rounded-md cursor-pointer aspect-square object-cover object-center"
-                onClick={() => setActiveImage(images.img4)}
-              />
+              {Object.values(images).map((img, index) => (
+                <img
+                  key={index}
+                  src={`http://localhost:3000/images/items/${img}`}
+                  alt={`Product Image ${index + 1}`}
+                  className="w-full md:h-24 h-16 rounded-md cursor-pointer aspect-square object-cover object-center"
+                  onClick={() => setActiveImage(img)}
+                />
+              ))}
             </div>
           </div>
           {/* Description */}
           <div className="flex flex-col gap-4 lg:w-2/4">
             <div>
-              <span className=" text-[#0052D4] font-semibold">
+              <span className="text-[#0052D4] font-semibold">
                 End Date: {item.end_date}
               </span>
               <h1 className="text-3xl font-bold text-[#6FB1FC]">

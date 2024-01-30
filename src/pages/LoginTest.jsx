@@ -30,8 +30,6 @@ const Login = () => {
 
       console.log(response.data);
       Cookies.set('token', response.data.token, { expires: 7 });
-      localStorage.setItem('userDetails', JSON.stringify(response.data.user));
-
       navigate('/user');
     } catch (error) {
       console.error('Error submitting form:', error);
@@ -68,7 +66,7 @@ const Login = () => {
       <div className="flex min-h-full flex-1 flex-col justify-center py-12 lg:px-8 lg:pt-[10%] md:pt-[15%] pt-[20%] pb-[5%] px-[10%]">
         <div className="sm:mx-auto sm:w-full sm:max-w-sm">
           <h2 className="text-center text-2xl font-bold leading-9 tracking-tight text-[#1357DE]">
-            Sign in to your account
+          Before Bidding Sign in to your account
           </h2>
         </div>
 

@@ -2,13 +2,20 @@ import React, { useState } from "react";
 import axios from "axios";
 import Footer from "../components/footer/Footer";
 import NavBar from "../components/navbar/Navbar";
+import { useNavigate } from "react-router-dom";
 
 const SignUp = () => {
+  const navigate = useNavigate();
+  const [errorMessage, setErrorMessage] = useState('');
+
+
   const [formData, setFormData] = useState({
     firstName: "",
     lastName: "",
     email: "",
+    username:"",
     phoneNumber: "",
+    birth_date:"",
     password: "",
     retypePassword: "",
   });
@@ -17,51 +24,106 @@ const SignUp = () => {
     const { name, value } = e.target;
     setFormData({ ...formData, [name]: value });
   };
-
   const handleSubmit = async (e) => {
     e.preventDefault();
-
+  
     // Validate form data before submission
     if (formData.password !== formData.retypePassword) {
       console.error("Error: Passwords do not match");
       // You may want to show an error message to the user
       return;
     }
-
+  
     const data = {
       ...formData,
       first_name: formData.firstName,
       last_name: formData.lastName,
       name: formData.firstName + " " + formData.lastName,
     };
-
+  
     try {
       const response = await axios.post("http://127.0.0.1:8000/users/create-user/", data);
       console.log(response.data);
-      if (response.error === 'email already exists') {
-        console.log(response.error);
-
+  
+      // Check for the specific error condition in the response data
+      if (response.data.email && response.data.email[0] === 'user with this email already exists.') {
+        setErrorMessage('Email already exists. Please use a different email.');
+  
+        // setTimeout(() => setErrorMessage(''), 5000); // Clears the error after 5 seconds
+      } else {
+        // Handle other response scenarios or success cases
+        navigate('/login');
       }
-
+  
       // You may want to provide feedback to the user upon successful submission
     } catch (error) {
-      
       console.error("Error submitting form:", error);
-    
+  
       // Access error response details
-      // if (error.response) {
-      //   console.error("Server responded with error status:", error.response.status);
-      //   console.error("Error details:", error.response.data);
-      // } else if (error.request) {
-      //   console.error("No response received from the server");
-      // } else {
-      //   console.error("Error setting up the request:", error.message);
-      // }
-    
-      // You may want to show an error message to the user
+      if (error.response) {
+        console.error("Server responded with error status:", error.response.status);
+        console.error("Error details:", error.response.data);
+        setErrorMessage('Email already exists. Please use a different email.');
+        // setErrorMessage('An error occurred during submission. Please try again.');
+      } else if (error.request) {
+        console.error("No response received from the server");
+        setErrorMessage('No response received from the server. Please try again later.');
+      } else {
+        console.error("Error setting up the request:", error.message);
+        setErrorMessage('An error occurred. Please try again.');
+      }
     }
-    
   };
+  
+  // const handleSubmit = async (e) => {
+  //   e.preventDefault();
+
+  //   // Validate form data before submission
+  //   if (formData.password !== formData.retypePassword) {
+  //     console.error("Error: Passwords do not match");
+  //     // You may want to show an error message to the user
+  //     return;
+  //   }
+
+  //   const data = {
+  //     ...formData,
+  //     first_name: formData.firstName,
+  //     last_name: formData.lastName,
+  //     name: formData.firstName + " " + formData.lastName,
+  //   };
+
+  //   try {
+  //     const response = await axios.post("http://127.0.0.1:8000/users/create-user/", data);
+  //     console.log(response.data);
+
+  //     navigate('/login')
+
+  //     if (response.email && response.email[0] === 'user with this email already exists.') {
+  //       setErrorMessage('Email already exists. Please use a different email.');
+
+  //       // setTimeout(() => setErrorMessage(''), 5000); // Clears the error after 5 seconds
+  //     } else {
+  //     }
+
+  //     // You may want to provide feedback to the user upon successful submission
+  //   } catch (error) {
+      
+  //     console.error("Error submitting form:", error);
+    
+  //     // Access error response details
+  //     // if (error.response) {
+  //     //   console.error("Server responded with error status:", error.response.status);
+  //     //   console.error("Error details:", error.response.data);
+  //     // } else if (error.request) {
+  //     //   console.error("No response received from the server");
+  //     // } else {
+  //     //   console.error("Error setting up the request:", error.message);
+  //     // }
+    
+  //     // You may want to show an error message to the user
+  //   }
+    
+  // };
   return (
     <div>
       <NavBar />
@@ -74,6 +136,26 @@ const SignUp = () => {
 
         <div className="mt-10 sm:mx-auto sm:w-full sm:max-w-sm">
           <form className="space-y-6" onSubmit={handleSubmit}>
+            <div>
+              <label
+                htmlFor="firstname"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                User Name
+              </label>
+              <div className="mt-2">
+                <input
+                  id="firstname"
+                  name="username"
+                  type="text"
+                  autoComplete="text"
+                  required
+                  value={formData.username}
+                  onChange={handleChange}
+                  className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
+                />
+              </div>
+            </div>
             <div>
               <label
                 htmlFor="firstname"
@@ -156,6 +238,26 @@ const SignUp = () => {
             </div>
             <div>
               <label
+                htmlFor="phonenumber"
+                className="block text-sm font-medium leading-6 text-gray-900"
+              >
+                Birth date
+              </label>
+              <div className="mt-2">
+                <input
+                  id="phonenumber"
+                  name="birth_date"
+                  type="date"
+                  autoComplete="number"
+                  required
+                  value={formData.birth_date}
+                  onChange={handleChange}
+                  className="peer block w-full appearance-none border-0 border-b border-[#1357DE] bg-transparent py-2.5 px-0 text-sm text-gray-900 focus:border-[#23A6F0] focus:outline-none focus:ring-0"
+                />
+              </div>
+            </div>
+            <div>
+              <label
                 htmlFor="password"
                 className="block text-sm font-medium leading-6 text-gray-900"
               >
@@ -202,6 +304,8 @@ const SignUp = () => {
               >
                 Sign up
               </button>
+              {errorMessage && <p style={{ color: 'red' }}>{errorMessage}</p>}
+
             </div>
           </form>
           <p className="mt-10 text-center text-sm text-gray-500">
