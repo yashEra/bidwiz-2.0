@@ -16,6 +16,7 @@ const ProductDes = () => {
   const { itemId } = useParams();
   const navigate = useNavigate();
 
+  //enter the bid value
   const handleBidSubmission = async () => {
     try {
       const responseToken = await axios.get("http://127.0.0.1:8000/users/csrf/");
@@ -36,10 +37,9 @@ const ProductDes = () => {
       });
           window.location.reload()
       if (response.ok) {
-        // Handle successful bid submission
         console.log("Bid submitted successfully");
-        // You may want to navigate or perform additional actions here
       } else {
+
         // Handle non-successful bid submission
         console.error(
           "Error submitting bid:",

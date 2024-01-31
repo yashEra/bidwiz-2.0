@@ -30,6 +30,7 @@ const SignUp = () => {
     // Validate form data before submission
     if (formData.password !== formData.retypePassword) {
       console.error("Error: Passwords do not match");
+      
       // You may want to show an error message to the user
       return;
     }
